@@ -5,6 +5,7 @@ using System.Collections.Generic;
 //from http://wiki.unity3d.com/index.php/AutoType
 public class AutoType : MonoBehaviour {
 	
+	public GUIStyle skin;
 	public float letterPause = 0.01f;
 	public SpriteRenderer mouse;
 	public AudioClip sound;
@@ -19,6 +20,7 @@ public class AutoType : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+//		GUI.skin = GameGui;
 		mousePos = new Vector3 (8, -4, -9);
 		mouse.transform.position= mousePos;
 		mouse.enabled = false;
@@ -62,12 +64,12 @@ public class AutoType : MonoBehaviour {
 		GUI.skin.box.wordWrap = true;
 		if(choice == false)
 		{
-			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-5, Screen.width - 10, Screen.height/4), message);
-			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-6*(Screen.height/8), Screen.width/5, Screen.height/10), speaker);
+			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-5, Screen.width - 10, Screen.height/4), message,skin);
+			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-6*(Screen.height/8), Screen.width/5, Screen.height/10), speaker,skin);
 		}
 		else if (choice == true)
 		{
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),list[count].choice))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),list[count].choice,skin))
 			{
 				message = list[count+4].text;
 				speaker = list[count+4].speaker;
@@ -75,21 +77,21 @@ public class AutoType : MonoBehaviour {
 				count+=8;
 			}
 
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),list[count+1].choice))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),list[count+1].choice,skin))
 			{
 				message = list[count+5].text;
 				speaker = list[count+5].speaker;
 				choice = false;
 			}
 
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+2].choice))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+2].choice,skin))
 			{
 				message = list[count+6].text;
 				speaker = list[count+6].speaker;
 				choice = false;
 			}
 
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+3].choice))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+3].choice,skin))
 			{
 				message = list[count+6].text;
 				speaker = list[count+6].speaker;
