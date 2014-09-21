@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class AutoType : MonoBehaviour {
 	
 	public GUIStyle skin;
-	public float letterPause = 0.01f;
+	public float letterPause = 0.0001f;
 	public SpriteRenderer mouse;
 	public SpriteRenderer remy;
 	public SpriteRenderer comcast;

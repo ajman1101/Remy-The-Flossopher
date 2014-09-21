@@ -333,7 +333,7 @@
 		<frame>
 			<sprite></sprite>
 			<text>THE END?</text>
-			<speaker>GAME</speaker>
+			<speaker></speaker>
 		</frame>
 	</frames>
 </game>
