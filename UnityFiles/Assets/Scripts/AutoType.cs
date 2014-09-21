@@ -11,6 +11,8 @@ public class AutoType : MonoBehaviour {
 	public Game data = new Game();
 	int count = 0;
 	string message = "";
+	public bool canClick = false;
+
 	// Use this for initialization
 	void Start () {
 		string toDisplay = "Whatever data is being sent, be it cat pictures, live video, " +
@@ -41,9 +43,10 @@ public class AutoType : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0) && canClick == true){
 			StartCoroutine (TypeText());
 		}
+
 	}
 	
 	//Draws the text box
@@ -54,6 +57,7 @@ public class AutoType : MonoBehaviour {
 	}
 
 	IEnumerator TypeText () {
+		canClick = false;
 		message = "";
 		foreach (char letter in list[count].text.ToCharArray()) 
 		{
@@ -65,5 +69,6 @@ public class AutoType : MonoBehaviour {
 			yield return new WaitForSeconds (letterPause);
 		}
 		count++;
+		canClick = true;
 	}
 }
