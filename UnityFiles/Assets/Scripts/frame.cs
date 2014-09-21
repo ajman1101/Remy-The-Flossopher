@@ -10,6 +10,12 @@ public class Frame {
 	[XmlElement(ElementName = "text")]
 	public string text { get; set; }
 
+	[XmlElement(ElementName = "speaker")]
+	public string speaker { get; set;}
+
+	[XmlElement(ElementName = "choice")]
+	public string choice {get; set;}
+
 	public Sprite sprite {
 		get { 
 			return Resources.Load(this.spriteName, typeof(Sprite)) as Sprite;

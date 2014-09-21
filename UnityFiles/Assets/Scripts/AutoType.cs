@@ -12,7 +12,9 @@ public class AutoType : MonoBehaviour {
 	public Game data = new Game();
 	int count = 0;
 	string message = "";
+	string speaker = "";
 	public bool canClick = false;
+	public bool choice = false;
 	Vector3 mousePos;
 
 	// Use this for initialization
@@ -58,22 +60,61 @@ public class AutoType : MonoBehaviour {
 	void OnGUI() {
 		FontStyle bold;
 		GUI.skin.box.wordWrap = true;
-		GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-5, Screen.width - 10, Screen.height/4), message);
+		if(choice == false)
+		{
+			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-5, Screen.width - 10, Screen.height/4), message);
+			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-6*(Screen.height/8), Screen.width/5, Screen.height/10), speaker);
+		}
+		else if (choice == true)
+		{
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),list[count].choice))
+			{
+
+			}
+
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),list[count+1].choice))
+			{
+
+			}
+
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+2].choice))
+			{
+
+			}
+
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+3].choice))
+			{
+
+			}	
+		}
+		
 	}
 
 	IEnumerator TypeText () {
 		canClick = false;
 		message = "";
-		foreach (char letter in list[count].text.ToCharArray()) 
+		speaker = list[count].speaker;
+		if(list[count].choice == null)
 		{
-			message += letter;
-			if (sound)
-					audio.PlayOneShot (sound);
-			//Debug.Log ("TypeText: Message - " + message);
-			yield return 0;
-			yield return new WaitForSeconds (letterPause);
+			choice = false;
+			foreach (char letter in list[count].text.ToCharArray()) 
+			{
+				message += letter;
+				if (sound)
+						audio.PlayOneShot (sound);
+				//Debug.Log ("TypeText: Message - " + message);
+				yield return 0;
+				yield return new WaitForSeconds (letterPause);
+			}
+			count++;
 		}
-		count++;
+		else if(list[count].choice != null)
+		{	
+			choice = true;
+		//	count+=4;
+		}
+			
+		
 		canClick = true;
 		mouse.enabled = true;
 	}
