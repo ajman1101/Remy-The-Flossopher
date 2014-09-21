@@ -266,10 +266,57 @@
 			<speaker>Comcast</speaker>
 		</frame>
 		<!--End Ending 4-->
+		
+		<!--ACT III-->
 		<frame>
 			<sprite>Sprites/IMG_3279.JPG</sprite>
-			<text></text>
-			<speaker></speaker>
+			<text>How was this classification decided?</text>
+			<speaker>Remy</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>In 2002, the FCC ruled that Internet Service Providers would be classified as an Information Service. In 2010, that decision was overruled, and Internet Service Providers were held to the same standards as Common carriers.  In 2014, a court judged that it was not legal to do so, and had the law revert back to its original state, with Internet Service Providers classified as an Information Service.</text>
+			<speaker>Judge</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>As information Services what can Internet Service Providers do?</text>
+			<speaker>Remy</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>Really it means that Internet Service Providers can decide how data is sent through their network. </text>
+			<speaker>Judge</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>So only Internet Service Providers can decide what Content Providers get charged or can use more data?</text>
+			<speaker>Remy</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>With the current classification, yes.</text>
+			<speaker>Comcast</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>So let’s reclassify Internet Service Providers!</text>
+			<speaker>Remy</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>Only if the people of our great nation deem it necessary.</text>
+			<speaker>Judge</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>But people did not see Net Neutrality as important, and the globe spiraled into a Comcast controlled corporate-nation. </text>
+			<speaker>Narrator</speaker>
+		</frame>
+		<frame>
+			<sprite></sprite>
+			<text>THE END?</text>
+			<speaker>GAME</speaker>
 		</frame>
 	</frames>
 </game>
