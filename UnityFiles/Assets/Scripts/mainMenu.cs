@@ -25,7 +25,10 @@ public class mainMenu : MonoBehaviour {
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width-20), 2*(Screen.height/4)-5, Screen.width - 10, Screen.height/4), "Play",skin))
 			{
-				Application.LoadLevel("GameGameGame");
+				if (Application.CanStreamedLevelBeLoaded ("GameGameGame")) 
+				{
+       				Application.LoadLevel ("GameGameGame");
+    			}
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width-20), 3*(Screen.height/4)-5, Screen.width - 10, Screen.height/4), "Credits",skin))

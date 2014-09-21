@@ -43,11 +43,11 @@ public class AutoType : MonoBehaviour {
 		//remyClips[3] = "R_mmhm.mp3";
 		//remyClips[4] = "R_MMM.mp3";
 		//remyClips[5] = "R_pssh.mp3";
-		string toDisplay = "Whatever data is being sent, be it cat pictures, live video, " +
-		"or life-saving tools about water filtration, all this data is subjected" +
-			"to Internet Service Providers whims without Net Neutrality. Net Neutrality" +
-				"keeps Internet Service Provider fair and balanced about their data transfer. " +
-				"Without Net Neutrality, cat pictures online could be eradicated. ";
+		// string toDisplay = "Whatever data is being sent, be it cat pictures, live video, " +
+		// "or life-saving tools about water filtration, all this data is subjected" +
+		// 	"to Internet Service Providers whims without Net Neutrality. Net Neutrality" +
+		// 		"keeps Internet Service Provider fair and balanced about their data transfer. " +
+		// 		"Without Net Neutrality, cat pictures online could be eradicated. ";
 		data = loadFrames("Assets/XML/dialogue.xml");
 		foreach(Frame f in data.getFrames){
 			list.Add(f);
@@ -82,7 +82,7 @@ public class AutoType : MonoBehaviour {
 	
 	//Draws the text box
 	void OnGUI() {
-		FontStyle bold;
+//		FontStyle bold;
 		GUI.skin.box.wordWrap = true;
 		if(choice == false)
 		{
