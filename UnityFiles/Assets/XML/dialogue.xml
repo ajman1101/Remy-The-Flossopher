@@ -128,11 +128,11 @@
 		<!--Ending 2-->
 		<frame>
 			<sprite>Sprites/IMG_3279.JPG</sprite>
-			<text>Remy: *Flexes Muscles*/
+			<text>Remy: *Flexes Muscles*
 			Judge: I know for a fact I cannot carry thousands of pounds.
 			Comcast: I also cannot hold thousands of pounds.
 			Judge: This seems to be an weighty issue for the Internet. Comcast, your arguments are valid and it seems necessary that Net Neutrality be overruled. Case Closed.</text>
-			<speaker>Remy/Judge/Comcast</speaker>
+			<speaker>Remy/Comcast/Judge</speaker>
 		</frame>
 		<!--End Ending 2-->
 		<!--Ending 3-->
@@ -141,8 +141,8 @@
 			<text>Comcast: Comcast is currently only handling a portion of its heavy data. If Comcast were to handle the full heavy load, cost would dramatically increase, making the Internet an infeasible and expensive endeavour.
 			Remy: This is the business Comcast works in. It is your responsibility to handle this load.
 			Judge: And Comcast shall handle the load. Case Closed.
-			Narrator: Narrator: With Comcast’s poor handling of the world’s heavy data, the world collapsed in on itself.</text>
-			<speaker>Comcast/Remy/Judge</speaker>
+			With Comcast’s poor handling of the world’s heavy data, the world collapsed in on itself.</text>
+			<speaker>Remy/Comcast/Judge</speaker>
 		</frame>
 		<!--End Ending 3-->
 		<!--Ending 4-->
@@ -253,7 +253,7 @@
 			<text>Comcast: These charges creates an equal Internet for our users. As Content Providers gain market traction, they will easily exist in the Internet ecosystem.
 			Remy: More pay for more play? Create an inequality to create an equalize internet?
 			Comcast: As Internet Service Providers are an Information Service, this is a fair and legal course of action for them to take.</text>
-			<speaker>Comcast/Remy</speaker>
+			<speaker>Remy/Comcast</speaker>
 		</frame>
 		<!--End of Ending 1-->
 		<!--Ending 2-->
@@ -262,8 +262,8 @@
 			<text>Comcast: No, those established Content Providers have the capital and resources to innovate and invest in the network they are using more of than most.
 			Remy: Can anyone invest enough to keep the Internet afloat?
 			Comcast: ….No….
-			Narrator: With the collapse of the Internet, and thus society, the world implodes.</text>
-			<speaker>Comcast/Remy</speaker>
+			With the collapse of the Internet, and thus society, the world implodes.</text>
+			<speaker>Remy/Comcast</speaker>
 		</frame>
 		<!--End Ending 2-->
 		<!--Ending 3-->
@@ -272,14 +272,14 @@
 			<text>Comcast: Corporations are people!
 			Remy: Exactly!
 			Judge: As Corporations are considered people by this courtroom, I see no issue to resolve in this case. Case Closed.</text>
-			<speaker>Comcast/Remy/Judge</speaker>
+			<speaker>Remy/Comcast/Judge</speaker>
 		</frame>
 		<!--End Ending 3-->
 		<!--Ending 4-->
 		<frame>
 			<sprite>Sprites/IMG_3279.JPG</sprite>
 			<text>Comcast: Finally Comcast can rule the world! All hail the great Comcast!
-			Narrator: With the world under Comcast’s mismanaged grasp, the world suffers an implosion.</text>
+			With the world under Comcast’s mismanaged grasp, the world suffers an implosion.</text>
 			<speaker>Comcast</speaker>
 		</frame>
 		<!--End Ending 4-->

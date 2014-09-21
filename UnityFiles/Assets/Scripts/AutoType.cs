@@ -8,6 +8,10 @@ public class AutoType : MonoBehaviour {
 	public GUIStyle skin;
 	public float letterPause = 0.01f;
 	public SpriteRenderer mouse;
+	public SpriteRenderer remy;
+	public SpriteRenderer comcast;
+	public SpriteRenderer judge;
+	public SpriteRenderer explosion;
 	public AudioClip sound;
 	public List<Frame> list = new List<Frame> ();
 	public Game data = new Game();
@@ -24,6 +28,10 @@ public class AutoType : MonoBehaviour {
 		mousePos = new Vector3 (8, -4, -9);
 		mouse.transform.position= mousePos;
 		mouse.enabled = false;
+		remy.enabled = false;
+		comcast.enabled = false;
+		judge.enabled = false;
+		explosion.enabled = false;
 		string toDisplay = "Whatever data is being sent, be it cat pictures, live video, " +
 		"or life-saving tools about water filtration, all this data is subjected" +
 			"to Internet Service Providers whims without Net Neutrality. Net Neutrality" +
@@ -53,6 +61,10 @@ public class AutoType : MonoBehaviour {
 	// Update is called once per frame
 	void Update (){
 		if(Input.GetMouseButtonDown(0) && canClick == true){
+			remy.enabled = false;
+			comcast.enabled = false;
+			judge.enabled = false;
+			explosion.enabled = false;
 			StartCoroutine (TypeText());
 		}
 
@@ -73,6 +85,19 @@ public class AutoType : MonoBehaviour {
 			{
 				message = list[count+4].text;
 				speaker = list[count+4].speaker;
+				//Checks for number of charecters to display
+				if(speaker == "Remy/Comcast")
+				{
+					remy.enabled = true;
+					comcast.enabled = true;
+				}
+				else
+				{
+					remy.enabled = true;
+					comcast.enabled = true;
+					judge.enabled = true;
+				}
+
 				choice = false;
 				count+=8;
 			}
@@ -82,6 +107,7 @@ public class AutoType : MonoBehaviour {
 				message = list[count+5].text;
 				speaker = list[count+5].speaker;
 				choice = false;
+				explosion.enabled = true;
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+2].choice,skin))
@@ -89,13 +115,15 @@ public class AutoType : MonoBehaviour {
 				message = list[count+6].text;
 				speaker = list[count+6].speaker;
 				choice = false;
+				explosion.enabled = true;
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+3].choice,skin))
 			{
-				message = list[count+6].text;
-				speaker = list[count+6].speaker;
+				message = list[count+7].text;
+				speaker = list[count+7].speaker;
 				choice = false;
+				explosion.enabled = true;
 			}	
 		}
 		
@@ -105,6 +133,23 @@ public class AutoType : MonoBehaviour {
 		canClick = false;
 		message = "";
 		speaker = list[count].speaker;
+		if (speaker == "Remy")
+		{
+			remy.enabled = true;
+		}
+		if (speaker == "Comcast") 
+		{
+			comcast.enabled = true;
+		}
+		if (speaker == "Judge")
+		{
+			judge.enabled = true;
+		}
+		else if(speaker == "Remy/Comcast")
+		{
+			remy.enabled = true;
+			comcast.enabled = true;
+		}
 		if(list[count].choice == null)
 		{
 			choice = false;
