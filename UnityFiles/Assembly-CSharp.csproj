@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\AutoType.cs" />
      <Compile Include="Assets\Scripts\drawBox.cs" />
      <Compile Include="Assets\Scripts\frame.cs" />
+     <Compile Include="Assets\Scripts\mainMenu.cs" />
      <None Include="Assets\XML\dialogue.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
