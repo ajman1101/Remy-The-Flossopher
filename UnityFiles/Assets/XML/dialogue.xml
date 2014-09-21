@@ -3,11 +3,23 @@
 	<frames>
 		<frame>
 			<sprite>Sprites/IMG_3279.JPG</sprite>
-			<text>Whatever data is being sent, be it cat pictures, live video, or life-saving tools about water filtration, all this data is subjected to Internet Service Providers whims without Net Neutrality. Net Neutrality keeps Internet Service Provider fair and balanced about their data transfer. Without Net Neutrality, cat pictures online could be eradicated.</text>
+			<text>Throttling Cat Pictures.</text>
+			<speaker>Remy</speaker>
 		</frame>
 		<frame>
 			<sprite>Sprites/IMG_3279.JPG</sprite>
 			<text>Ed is a WIZARD!</text>
+			<speaker></speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text>That is the issue at stake.</text>
+			<speaker>Remy</speaker>
+		</frame>
+		<frame>
+			<sprite>Sprites/IMG_3279.JPG</sprite>
+			<text></text>
+			<speaker></speaker>
 		</frame>
 	</frames>
 </game>

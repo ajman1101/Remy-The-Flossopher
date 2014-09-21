@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/XML/dialogue.xml">
+    <Files>
+      <File FileName="Assets/Scripts/AutoType.cs" Line="20" Column="31" />
+      <File FileName="Assets/XML/dialogue.xml" Line="17" Column="17" />
+      <File FileName="Assets/Scripts/frame.cs" Line="27" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
