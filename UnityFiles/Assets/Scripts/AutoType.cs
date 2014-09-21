@@ -9,6 +9,7 @@ public class AutoType : MonoBehaviour {
 	public AudioClip sound;
 	public List<Frame> list = new List<Frame> ();
 	public Game data = new Game();
+	int count = 0;
 	string message = "";
 	// Use this for initialization
 	void Start () {
@@ -39,10 +40,12 @@ public class AutoType : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	//void Update (){
-
-	//}
-
+	void Update (){
+		if(Input.GetMouseButtonDown(0)){
+			StartCoroutine (TypeText());
+		}
+	}
+	
 	//Draws the text box
 	void OnGUI() {
 		FontStyle bold;
@@ -51,19 +54,16 @@ public class AutoType : MonoBehaviour {
 	}
 
 	IEnumerator TypeText () {
-		Debug.Log ("TypeText: Called");
-		//this.gameObject = f.sprite;
-		foreach (Frame f in data.getFrames) 
+		message = "";
+		foreach (char letter in list[count].text.ToCharArray()) 
 		{
-			foreach (char letter in f.text.ToCharArray()) 
-			{
-				message += letter;
-				if (sound)
-						audio.PlayOneShot (sound);
-				//Debug.Log ("TypeText: Message - " + message);
-				yield return 0;
-				yield return new WaitForSeconds (letterPause);
-			}
+			message += letter;
+			if (sound)
+					audio.PlayOneShot (sound);
+			//Debug.Log ("TypeText: Message - " + message);
+			yield return 0;
+			yield return new WaitForSeconds (letterPause);
 		}
+		count++;
 	}
 }
