@@ -4,15 +4,21 @@ using System.Collections.Generic;
 
 //from http://wiki.unity3d.com/index.php/AutoType
 public class AutoType : MonoBehaviour {
-	
+	public AudioSource audioSource = new AudioSource();
 	public GUIStyle skin;
-	public float letterPause = 0.0001f;
+	public float letterPause = 0.0001f; //time-wait before next letter is printed : type float
+	//Sprite decleration
 	public SpriteRenderer mouse;
 	public SpriteRenderer remy;
 	public SpriteRenderer comcast;
 	public SpriteRenderer judge;
 	public SpriteRenderer explosion;
-	public AudioClip sound;
+	//Audio decleration
+	public AudioClip remyAudio;
+	public AudioClip comcastAudio;
+	public AudioClip judgeSound;
+	public AudioClip[] remyClips = new AudioClip[6];
+	public string[] comcastSounds = new string[7];
 	public List<Frame> list = new List<Frame> ();
 	public Game data = new Game();
 	int count = 0;
@@ -32,6 +38,12 @@ public class AutoType : MonoBehaviour {
 		comcast.enabled = false;
 		judge.enabled = false;
 		explosion.enabled = false;
+//		remyClips[0] = AudioClip.Create("R_eh-eh.mp3", 44100, 1, 44100, false, true);
+//		remyClips[1] = AudioClip.Create("R_Hmmmm.mp3", 44100, 1, 44100, false, true);
+//		remyClips[2] = AudioClip.Create("R_Mhma.mp3", 44100, 1, 44100, false, true);
+		//remyClips[3] = "R_mmhm.mp3";
+		//remyClips[4] = "R_MMM.mp3";
+		//remyClips[5] = "R_pssh.mp3";
 		string toDisplay = "Whatever data is being sent, be it cat pictures, live video, " +
 		"or life-saving tools about water filtration, all this data is subjected" +
 			"to Internet Service Providers whims without Net Neutrality. Net Neutrality" +
@@ -56,7 +68,6 @@ public class AutoType : MonoBehaviour {
 		return ObjItems;
 	}
 	
-
 	
 	// Update is called once per frame
 	void Update (){
@@ -136,6 +147,9 @@ public class AutoType : MonoBehaviour {
 		if (speaker == "Remy")
 		{
 			remy.enabled = true;
+//			int rand = Random.Range(0,3);
+//			audioSource.clip = remyClips[rand];
+//			audioSource.Play();
 		}
 		if (speaker == "Comcast") 
 		{
@@ -156,9 +170,6 @@ public class AutoType : MonoBehaviour {
 			foreach (char letter in list[count].text.ToCharArray()) 
 			{
 				message += letter;
-				if (sound)
-						audio.PlayOneShot (sound);
-				//Debug.Log ("TypeText: Message - " + message);
 				yield return 0;
 				yield return new WaitForSeconds (letterPause);
 			}
