@@ -69,22 +69,31 @@ public class AutoType : MonoBehaviour {
 		{
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),list[count].choice))
 			{
-
+				message = list[count+4].text;
+				speaker = list[count+4].speaker;
+				choice = false;
+				count+=8;
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),list[count+1].choice))
 			{
-
+				message = list[count+5].text;
+				speaker = list[count+5].speaker;
+				choice = false;
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+2].choice))
 			{
-
+				message = list[count+6].text;
+				speaker = list[count+6].speaker;
+				choice = false;
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+3].choice))
 			{
-
+				message = list[count+6].text;
+				speaker = list[count+6].speaker;
+				choice = false;
 			}	
 		}
 		
