@@ -6,15 +6,20 @@ using System.Collections.Generic;
 public class AutoType : MonoBehaviour {
 	
 	public float letterPause = 0.01f;
+	public SpriteRenderer mouse;
 	public AudioClip sound;
 	public List<Frame> list = new List<Frame> ();
 	public Game data = new Game();
 	int count = 0;
 	string message = "";
 	public bool canClick = false;
+	Vector3 mousePos;
 
 	// Use this for initialization
 	void Start () {
+		mousePos = new Vector3 (8, -4, -9);
+		mouse.transform.position= mousePos;
+		mouse.enabled = false;
 		string toDisplay = "Whatever data is being sent, be it cat pictures, live video, " +
 		"or life-saving tools about water filtration, all this data is subjected" +
 			"to Internet Service Providers whims without Net Neutrality. Net Neutrality" +
@@ -70,5 +75,6 @@ public class AutoType : MonoBehaviour {
 		}
 		count++;
 		canClick = true;
+		mouse.enabled = true;
 	}
 }
