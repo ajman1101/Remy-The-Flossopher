@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 //from http://wiki.unity3d.com/index.php/AutoType
 public class AutoType : MonoBehaviour {
-	public AudioSource audioSource = new AudioSource();
+	
 	public GUIStyle skin;
 	public float letterPause = 0.0001f; //time-wait before next letter is printed : type float
 	//Sprite decleration
@@ -14,11 +14,10 @@ public class AutoType : MonoBehaviour {
 	public SpriteRenderer judge;
 	public SpriteRenderer explosion;
 	//Audio decleration
-	public AudioClip remyAudio;
-	public AudioClip comcastAudio;
-	public AudioClip judgeSound;
-	public AudioClip[] remyClips = new AudioClip[6];
-	public string[] comcastSounds = new string[7];
+	public AudioSource remyAudio = new AudioSource();
+	public AudioSource judgeAudio = new AudioSource();
+	public AudioSource comcastAudio = new AudioSource();
+	public AudioSource musicAudio = new AudioSource();
 	public List<Frame> list = new List<Frame> ();
 	public Game data = new Game();
 	int count = 0;
@@ -147,22 +146,23 @@ public class AutoType : MonoBehaviour {
 		if (speaker == "Remy")
 		{
 			remy.enabled = true;
-//			int rand = Random.Range(0,3);
-//			audioSource.clip = remyClips[rand];
-//			audioSource.Play();
+			remyAudio.Play();
 		}
 		if (speaker == "Comcast") 
 		{
 			comcast.enabled = true;
+			comcastAudio.Play();
 		}
 		if (speaker == "Judge")
 		{
 			judge.enabled = true;
+			judgeAudio.Play();
 		}
 		else if(speaker == "Remy/Comcast")
 		{
 			remy.enabled = true;
 			comcast.enabled = true;
+			comcastAudio.Play();
 		}
 		if(list[count].choice == null)
 		{
