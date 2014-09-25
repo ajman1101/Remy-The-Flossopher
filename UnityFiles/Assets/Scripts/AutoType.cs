@@ -19,16 +19,18 @@ public class AutoType : MonoBehaviour {
 	public AudioSource comcastAudio = new AudioSource();
 	public AudioSource musicAudio = new AudioSource();
 	public List<Frame> list = new List<Frame> ();
-	public Game data = new Game();
+	//public Game data = new Game();
 	int count = 0;
 	string message = "";
 	string speaker = "";
 	public bool canClick = false;
 	public bool choice = false;
 	Vector3 mousePos;
+	public TwineImporter Twine;
 
 	// Use this for initialization
 	void Start () {
+		Twine = new TwineImporter();
 //		GUI.skin = GameGui;
 		mousePos = new Vector3 (8, -4, -9);
 		mouse.transform.position= mousePos;
@@ -37,6 +39,7 @@ public class AutoType : MonoBehaviour {
 		comcast.enabled = false;
 		judge.enabled = false;
 		explosion.enabled = false;
+
 //		remyClips[0] = AudioClip.Create("R_eh-eh.mp3", 44100, 1, 44100, false, true);
 //		remyClips[1] = AudioClip.Create("R_Hmmmm.mp3", 44100, 1, 44100, false, true);
 //		remyClips[2] = AudioClip.Create("R_Mhma.mp3", 44100, 1, 44100, false, true);
@@ -48,11 +51,19 @@ public class AutoType : MonoBehaviour {
 		// 	"to Internet Service Providers whims without Net Neutrality. Net Neutrality" +
 		// 		"keeps Internet Service Provider fair and balanced about their data transfer. " +
 		// 		"Without Net Neutrality, cat pictures online could be eradicated. ";
-		data = loadFrames("Assets/XML/dialogue.xml");
-		foreach(Frame f in data.getFrames){
-			list.Add(f);
-		}
-		Debug.Log(list.Count);
+
+		// data = loadFrames("Assets/XML/dialogue.xml");
+		// foreach(Frame f in data.getFrames){
+		// 	list.Add(f);
+		// }
+		// Debug.Log(list.Count);
+
+		//Twine.ReadTwineData("Assets/Resources/dialogue.txt");
+		//Twine.ParseTwineData(Twine.twineInfo);
+		//Debug.Log(Twine.twineInfo);
+		//Twine.ShowTwineData();
+		Debug.Log("Current: "+Twine.data.Current);
+
 		StartCoroutine (TypeText ());
 	}
 	//though a function for the Game class
@@ -142,7 +153,9 @@ public class AutoType : MonoBehaviour {
 	IEnumerator TypeText () {
 		canClick = false;
 		message = "";
-		speaker = list[count].speaker;
+		//Debug.Log(Twine.data.Current.Link);
+		//int speakerTo = Twine.data.Current.Content.IndexOf(":");
+		//speaker = Twine.data.Current.Content;
 		if (speaker == "Remy")
 		{
 			remy.enabled = true;

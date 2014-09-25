@@ -1,0 +1,328 @@
+﻿:: Start
+Remy: Throttling Cat Pictures.
+[[Test|1]]
+
+
+:: 4
+Judge: Overruled. Mr. Flossopher, continue, but get to your point.
+[[Test|5]]
+
+
+:: 8
+Comcast: This is a fallacy. We, at Comcast, want to bring internet users the best possible internet experience. To do this, we maintain stricter control over each user’s data consumption. This will greatly increase all user’s experience with the internet, and make it a more fair place, with all having the same data restrictions. This will not result in user’s having their data slowed or throttled, but content providers paying their share for their heavier use of the network.
+[[Test|9]]
+
+
+:: 22
+Remy flexes muscles, courtroom is stunned. 
+Judge: I know for a fact I cannot carry thousands of pounds. 
+Comcast: I also cannot hold thousands of pounds.
+Judge: This seems to be an weighty issue for the Internet. Comcast, your arguments are valid and it seems necessary that Net Neutrality be overruled. Case Closed.
+GAME OVER.
+[[Test|17]]
+
+
+:: 12
+Comcast: We may. Whatever benefits our users will be put into effect. 
+[[Test|13]]
+
+
+:: 19
+Remy: I think anyone in this room could carry that weight. 
+[[Test|22]]
+
+
+:: 16
+Comcast: Well……
+[[Test|17]]
+
+
+:: 1
+Remy: That is the issue at stake.
+[[Test|2]]
+
+
+:: 5
+Remy: Whatever data is being sent, be it cat pictures, live video, or life-saving tools about water filtration, all this data is subjected to Internet Service Providers whims without Net Neutrality. Net Neutrality keeps Internet Service Provider fair and balanced about their data transfer. Without Net Neutrality, cat pictures online could be eradicated.
+[[Test|6]]
+
+
+:: 9
+Remy: So you, Comcast, will decide how fast user’s get their internet information? 
+[[Test|10]]
+
+
+:: 13
+Judge: Onto the next point of contention, discrimination.  
+[[Test|14]]
+
+
+:: 17
+Comcast: A typical hard drive, no matter the data stored on it…...is…..1 pound...actually a little more than that. Let’s say 1.1 pounds. Now your heavy content providers will not just use ONE hard drive they will use thousands. That’s thousands of pounds of data. Not even the cabling and other network equipment needed! Would anyone here be able to carry that much data?
+[[Choice1.1|18]]
+[[Choice1.2|19]]
+[[Choice1.3|20]]
+[[Choice1.4|21]]
+
+
+:: 20
+Remy: Comcast can easily handle that load.
+[[Test|23]]
+
+
+:: 23
+Comcast: Comcast is currently only handling a portion of its heavy data. If Comcast were to handle the full heavy load, cost would dramatically increase, making the Internet an infeasible and expensive endeavour. 
+Remy: This is the business Comcast works in. It is your responsibility to handle this load. 
+Judge: And Comcast shall handle the load. Case Closed.
+Narrator: With Comcast’s poor handling of the world’s heavy data, the world collapsed in on itself. 
+[[Test|17]]
+
+
+:: 2
+Remy:Is it legal to slow down anyone’s speed at which they can see precious felines?
+[[Test|3]]
+
+
+:: 6
+Judge: Mr. Fossospher, your point?
+[[Test|7]]
+
+
+:: 10
+Comcast: In reality, this is so that all users will have same and equal access to their internet pipes. Currently those internet pipes can be used up by one content provider sending large files, such as games, movies, and other media. 
+[[Test|11]]
+
+
+:: 14
+Comcast: Of course, your honor. Comcast will not discriminate in what users have access to online. We will instead support avenues of greater convenience to our users, ones that keep network cycles open and available. This could mean that content providers with heavier data could see differences in their network usage, due to their heavy datas heavy use of the network. 
+[[Test|15]]
+
+
+:: 21
+Remy: Americans don’t have a shed full of hard drives.
+[[Test|24]]
+
+
+:: 24
+Courtroom is stunned with nothing to say. 
+[[Test|17]]
+
+
+:: 3
+Comcast: Objection, your honor. That is not what is at stake. This is ridiculous embellishment!
+[[Test|4]]
+
+
+:: 7
+Remy: Comcast wants to throttle internet user’s data to control the internet!!
+[[Test|8]]
+
+
+:: 11
+Remy: Will you choose what types of data get higher priority?
+[[Test|12]]
+
+
+:: 15
+Remy: What makes data too heavy for Comcast? Is the data of a movie heavier than a catnip? Lighter than a cat? 
+[[Test|16]]
+
+
+:: 18
+Remy: Data does not have weight.
+[[Test|25]]
+
+
+:: 28
+Comcast: Downloaded Video Content hampers the network even more! It forces a full video file through the network at once! 
+[[Test|29]]
+
+
+:: 32
+Comcast: While streamed and downloaded Video Content do differ, it is still a difference to the end user. Though maybe not the network….
+[[Test|33]]
+
+
+:: 36
+Remy: Will this not stifle the free market? This will force smaller companies, starting out in the Video Content business, to be taxed without regard to their actual network impact, but solely based on the content they provide. 
+[[Test|37]]
+
+
+:: 41
+Remy: So charging established Content Providers doesn’t stifle innovation?
+[[Test|44]]
+
+
+:: 44
+Comcast: No, those established Content Providers have the capital and resources to innovate and invest in the network they are using more of than most. 
+
+Remy: Can anyone invest enough to keep the Internet afloat?
+
+Comcast: ….No….
+
+Narrator: With the collapse of the Internet, and thus society, the world implodes.
+GAME OVER.
+[[Test|39]]
+
+
+:: 25
+Remy: Data’s weight is from its content. Video consumes more network than text. 
+Comcast: True. We, at Comcast, just want the Video Content Providers to foot their share of the bill. A handful of Video Content Providers use the most of the network, and should be charged accordingly. 
+Judge: It seems the content type has a greater priority than the weight of the data. Comcast, why is the type of content so relevant? 
+[[Test|26]]
+
+
+:: 37
+Comcast: Comcast supports an Internet with a free market. We, by no means, want to stifle innovation, but rather want to hold all to the same standard, just as the FCC holds all Internet Service Providers to the same standard.
+[[Test|38]]
+
+
+:: 29
+Remy: So streamed content is not that impactful on the network then?
+[[Test|30]]
+
+
+:: 33
+Comcast: Video is what kills our network! All Video Content Providers need to be charged for their impact and influence of our network. 
+[[Test|34]]
+
+
+:: StoryAuthor
+Andrew Mandula and Nathaniel Case
+
+
+:: 42
+Remy: Free markets are for people not corporations.
+[[Test|45]]
+
+
+:: 45
+C: Corporations are people!
+
+R: Exactly!
+
+J: As Corporations are considered people by this courtroom, I see no issue to resolve in this case. Case Closed.
+
+The World Implodes.
+
+GAME OVER.
+[[Test|39]]
+
+
+:: 26
+Comcast: Text content is sent quickly, whereas Video content is sent consistently through the network for as long as the video lasts. A two hour video is using the network for the entire two hours a user is watching it, while text content is sent in a few seconds. 
+[[Test|27]]
+
+
+:: 30
+Comcast: No….it still is just as impactful on the network.
+[[Test|31]]
+
+
+:: 34
+Remy: So it is fair, in the free market, to charge Video Content Providers more soley based on the content type?
+[[Test|35]]
+
+
+:: 38
+Remy: So what is that standard all Internet Service Providers are held to?
+[[Test|39]]
+
+
+:: 43
+Remy: With no regulation, finally humanity can ascend to being controlled by corporations! No free will! True Freedom!
+[[Test|46]]
+
+
+:: 46
+C: Finally Comcast can rule the world! All hail the great Comcast! 
+
+Narrator: With the world under Comcast’s mismanaged grasp, the world suffers an implosion.
+
+GAME OVER.
+[[Test|39]]
+
+
+:: 27
+Remy: This is only valid for users using services that stream their Video Content. Any Video Content that is downloaded by a user will take less time to receive than streamed Video Content.
+[[Test|28]]
+
+
+:: 31
+Remy: Well then time has no direct bearing on the impact of any content on the network.
+[[Test|32]]
+
+
+:: 35
+Comcast: Yes.
+[[Test|36]]
+
+
+:: 39
+Comcast: The Internet Service Providers are considered an Information Service. With that definition, we exist in a minimal regulatory environment to greater promote investment and innovation on the Internet. 
+[[Choice2.1|40]] 
+[[Choice2.2|41]]
+[[Choice2.3|42]]
+[[Choice2.4|43]] 
+
+
+:: 40
+Remy: So charging upstart Content Providers is promoting innovation on the Internet?
+[[Test|47]]
+
+
+:: 50
+Remy: As information Services what can Internet Service Providers do?
+[[Test|51]]
+
+
+:: 54
+Remy: So let’s reclassify Internet Service Providers!
+[[Test|55]]
+
+
+:: 47
+Comcast: These charges creates an equal Internet for our users. As Content Providers gain market traction, they will easily exist in the Internet ecosystem. 
+
+Remy: More pay for more play? Create an inequality to create an equalize internet?
+
+Comcast: As Internet Service Providers are an Information Service, this is a fair and legal course of action for them to take.
+[[Test|48]]
+
+
+:: 51
+Judge: Really it means that Internet Service Providers can decide how data is sent through their network. 
+[[Test|52]]
+
+
+:: 55
+Judge: Only if the people of our great nation deem it necessary.
+[[Test|56]]
+
+
+:: 48
+Remy: How was this classification decided? 
+[[Test|49]]
+
+
+:: 52
+Remy: So only Internet Service Providers can decide what Content Providers get charged or can use more data?
+[[Test|53]]
+
+
+:: 56
+Narrator: But people did not see Net Neutrality as important, and the globe spiraled into a Comcast controlled corporate-nation. 
+
+THE END?
+
+
+:: 49
+Judge: In 2002, the FCC ruled that Internet Service Providers would be classified as an Information Service. In 2010, that decision was overruled, and Internet Service Providers were held to the same standards as Common carriers.  In 2014, a court judged that it was not legal to do so, and had the law revert back to its original state, with Internet Service Providers classified as an Information Service. 
+[[Test|50]]
+
+
+:: 53
+Comcast: With the current classification, yes.
+[[Test|54]]
+
+
