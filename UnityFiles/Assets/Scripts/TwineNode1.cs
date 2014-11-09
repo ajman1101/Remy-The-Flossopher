@@ -7,44 +7,47 @@ public class TwineNode1
 	string passage;
 	string content;
 	List<string> linkTitles = new List<string>();
-	List<string> links = new List<string>();
+	public List<string> links = new List<string>();
 	string nextPassage;
 
 	public string Passage {get{return passage;} set{passage = value;}}
 	public string Content {get{return content;} set{content = value;}}
 	
-	public string LinkTitle(string data) 
+	public string LinkTitle 
 	{
-		get:
+		get
 		{
 			foreach(string s in linkTitles)
-			{
+			{/*
 				if(s == data)
 				{
 					return s;
-				}
+				}*/
+				return s;
 			}
 			return null;
 		}
 	}
 
+	/*
 	public string Link()
 	{
 		get:
 		{
 			return links[0];
 		}
-	}
+	}*/
 
-	public string Link(string data)
+	public string Link
 	{
-		get:{
+		get{
 			foreach(string s in links)
-			{
+			{/*
 				if(s == data)
 				{
 					return s;
-				}
+				}*/
+				return s;
 			}
 			return null;
 		}
@@ -62,7 +65,7 @@ public class TwineNode1
                 int startLink = data.IndexOf("|") + 1;
                 int endLink = data.IndexOf("]]");
                 links.Add(data.Substring(startLink, endLink - startLink));
-                Debug.Log("Title: " + title + "\n Link: " + link);
+                Debug.Log("Title: " + LinkTitle + "\n Link: " + Link);
             }
         if (data.Length == 0)
             {

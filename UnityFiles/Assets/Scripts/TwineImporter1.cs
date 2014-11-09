@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System;
 
 public class TwineImporter1 
 {
@@ -21,6 +22,7 @@ public class TwineImporter1
     {
         string temp;
         string[] file;
+		string[] split = {"::"};
 
         try
         {
@@ -32,7 +34,7 @@ public class TwineImporter1
             sr.Close();
 
             //parse large string by lines into an list
-            file = temp.Split("::"[0]);
+			file = temp.Split(split, StringSplitOptions.RemoveEmptyEntries);
             foreach (string s in file)
             {
                 twineData.Add(s);
@@ -42,7 +44,7 @@ public class TwineImporter1
         catch (FileNotFoundException e)
         {
             Debug.Log("The process failed: {0}" + e.ToString());
-            return null;
+            return;
         }
     }
 
@@ -54,15 +56,16 @@ public class TwineImporter1
         }
     }
 
+	/*
     public void ParseTwineData(List<string> data)
     {
     	for (int i = 0; i < data.Count; i++)
         {
-            TwineNode twineNode = new TwineNode();
-            twineData.Add(twineNode.Parse(rawData[i]));
+            TwineNode1 twineNode = new TwineNode1(data[i]);
+			//twineData.Add(twineNode.Parse(rawData[i]));
         }
-        current = twineData[0];
-    }
+		//current = twineData[0];
+    }*/
 
     // Update is called once per frame
     void Update()
