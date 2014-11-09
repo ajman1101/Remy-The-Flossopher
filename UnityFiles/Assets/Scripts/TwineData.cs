@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class TwineData{
 
-	public TwineNode current = new TwineNode();
+	//public TwineNode current = new TwineNode();
 
-	public TwineNode Current {get{return current;} set{current = value;}}
+	//public TwineNode Current {get{return current;} set{current = value;}}
 
 	public List<TwineNode> Data = new List<TwineNode>();
 
@@ -17,7 +17,7 @@ public class TwineData{
         	TwineNode twineNode = new TwineNode();
         	Data.Add(twineNode.Parse(rawData[i]));
         }
-        current = Data[0];
+        //current = Data[0];
 	}
 
 	 void ShowTwineData(List <string> data)
@@ -38,7 +38,7 @@ public class TwineData{
         }
     }
 
-    	public void NextNode()
+    	public void NextNode(TwineNode current)
 	{
 		for(int i = 0; i > Data.Count; i++)
 		{
@@ -49,7 +49,7 @@ public class TwineData{
 		}
 	}
 
-	public void NextNode(string link)
+	public void NextNode(TwineNode current , string link)
 	{
 		for(int i = 0; i >Data.Count; i++)
 		{

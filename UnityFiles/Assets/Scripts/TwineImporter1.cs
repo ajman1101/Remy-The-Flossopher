@@ -1,38 +1,23 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
-public class TwineImporter 
+public class TwineImporter1 
 {
 
     // Use this for initialization
-    public TwineNode current = new TwineNode();
-    public TwineNode Current {get{return current;} set{current = value;}}
+    List<string> twineData = new List<string>();
 
-    public List<string> twineInfo = new List<string>();
-
-    public List<TwineNode> twineData = new List<TwineNode>();
-
-    public TwineData data;
-
-    public TwineImporter()
+    public TwineImporter1()
     {
         string path = Application.dataPath + @"\Resources\dialogue.txt";
+        ReadTwineData(path);
+        ShowTwineData(twineData);
 
-        twineInfo = ReadTwineData(path);
-
-        ParseTwineData(twineInfo);
-
-        //data = new TwineData(twineInfo);
-
-        //Debug.Log(Current);
-        //ShowTwineData(twineInfo);
-
-        //ParseTwineData(twineInfo);
     }
 
-    public List<string> ReadTwineData(string path)
+    public void ReadTwineData(string path)
     {
         string temp;
         string[] file;
@@ -47,12 +32,11 @@ public class TwineImporter
             sr.Close();
 
             //parse large string by lines into an list
-            file = temp.Split("\n"[0]);
+            file = temp.Split("::"[0]);
             foreach (string s in file)
             {
-                twineInfo.Add(s);
+                twineData.Add(s);
             }
-            return twineInfo;
         }
 
         catch (FileNotFoundException e)
@@ -64,25 +48,15 @@ public class TwineImporter
 
     void ShowTwineData(List <string> data)
     {
-        bool listedAll = false;
-
-        if (listedAll == false)
+        for (int i = 0; i < data.Count; i++)
         {
-            for (int i = 0; i < data.Count; i++)
-            {
-                if (i == data.Count)
-                {
-                    listedAll = true;
-                }
-
-                Debug.Log(data[i]);
-            }
+            Debug.Log("Data Set "+i+": "+ data[i]);
         }
     }
 
-    public void ParseTwineData(List<string> rawData)
+    public void ParseTwineData(List<string> data)
     {
-    	for (int i = 0; i < rawData.Count; i++)
+    	for (int i = 0; i < data.Count; i++)
         {
             TwineNode twineNode = new TwineNode();
             twineData.Add(twineNode.Parse(rawData[i]));

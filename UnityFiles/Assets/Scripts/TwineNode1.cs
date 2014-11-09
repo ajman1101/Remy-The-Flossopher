@@ -1,42 +1,67 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class TwineNode{
-
-	string title;
-	string passage; 
-	string link;
+public class TwineNode1
+{
+	string passage;
 	string content;
+	List<string> linkTitles = new List<string>();
+	List<string> links = new List<string>();
+	string nextPassage;
 
-
-	public string Title { get{return title;} set{title = value;}}
 	public string Passage {get{return passage;} set{passage = value;}}
-	public string Link {get{return link;} set{link = value;}}
 	public string Content {get{return content;} set{content = value;}}
-
 	
-	
-	// Use this for initialization
-	void Start () {
-		
+	public string LinkTitle(string data) 
+	{
+		get:
+		{
+			foreach(string s in linkTitles)
+			{
+				if(s == data)
+				{
+					return s;
+				}
+			}
+			return null;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public string Link()
+	{
+		get:
+		{
+			return links[0];
+		}
 	}
 
-	public TwineNode Parse(string data)
+	public string Link(string data)
+	{
+		get:{
+			foreach(string s in links)
+			{
+				if(s == data)
+				{
+					return s;
+				}
+			}
+			return null;
+		}
+	}
+
+	public string NextPassage {get{return nextPassage;} set{nextPassage = value;}}
+
+	public TwineNode1(string data)
 	{
 		if (data.IndexOf("[[") != -1)
             {
                 int startTitle = data.IndexOf("[[") + 2;
                 int endTitle = data.IndexOf("|");
-                title = data.Substring(startTitle, endTitle - startTitle);
+                linkTitles.Add(data.Substring(startTitle, endTitle - startTitle));
                 int startLink = data.IndexOf("|") + 1;
                 int endLink = data.IndexOf("]]");
-                link = data.Substring(startLink, endLink - startLink);
+                links.Add(data.Substring(startLink, endLink - startLink));
                 Debug.Log("Title: " + title + "\n Link: " + link);
             }
         if (data.Length == 0)
@@ -54,29 +79,5 @@ public class TwineNode{
             	content = data;
             	Debug.Log("Content: "+content);
             }
-            
-    	return  this;
 	}
-
-	// public void NextNode(List <TwineNode> Data)
-	// {
-	// 	for(int i = 0; i > Data.Count; i++)
-	// 	{
-	// 		if(Data.Current.Link == Data[i].Title)
-	// 		{
-	// 			Data.Current = Data[i];
-	// 		}
-	// 	}
-	// }
-
-	// public void NextNode(List <TwineNode> Data, string link)
-	// {
-	// 	for(int i = 0; i >Data.Count; i++)
-	// 	{
-	// 		if(Data[i].link == link)
-	// 		{
-	// 			Data.Current = Data[i];
-	// 		}
-	// 	}
-	// }
 }

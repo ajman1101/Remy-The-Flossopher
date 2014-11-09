@@ -26,11 +26,11 @@ public class AutoType : MonoBehaviour {
 	public bool canClick = false;
 	public bool choice = false;
 	Vector3 mousePos;
-	public TwineImporter Twine;
+	public TwineImporter1 Twine;
 
 	// Use this for initialization
 	void Start () {
-		Twine = new TwineImporter();
+		Twine = new TwineImporter1();
 //		GUI.skin = GameGui;
 		mousePos = new Vector3 (8, -4, -9);
 		mouse.transform.position= mousePos;
@@ -57,12 +57,6 @@ public class AutoType : MonoBehaviour {
 		// 	list.Add(f);
 		// }
 		// Debug.Log(list.Count);
-
-		//Twine.ReadTwineData("Assets/Resources/dialogue.txt");
-		//Twine.ParseTwineData(Twine.twineInfo);
-		//Debug.Log(Twine.twineInfo);
-		//Twine.ShowTwineData();
-		Debug.Log("Current: "+Twine.data.Current);
 
 		StartCoroutine (TypeText ());
 	}
