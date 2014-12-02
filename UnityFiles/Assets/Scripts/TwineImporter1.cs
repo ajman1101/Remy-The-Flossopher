@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-public class TwineImporter1 
+public class TwineImporter1
 {
 
     // Use this for initialization
@@ -14,8 +14,8 @@ public class TwineImporter1
     {
         string path = Application.dataPath + @"\Resources\dialogue.txt";
         ReadTwineData(path);
-        ShowTwineData(twineData);
-
+        //ShowTwineData(twineData);
+		ParseTwineData(twineData);
     }
 
     public void ReadTwineData(string path)
@@ -37,7 +37,7 @@ public class TwineImporter1
 			file = temp.Split(split, StringSplitOptions.RemoveEmptyEntries);
             foreach (string s in file)
             {
-                twineData.Add(s);
+                twineData.Add("::" + s);
             }
         }
 
@@ -56,16 +56,14 @@ public class TwineImporter1
         }
     }
 
-	/*
-    public void ParseTwineData(List<string> data)
+	public void ParseTwineData(List<string> data)
     {
     	for (int i = 0; i < data.Count; i++)
         {
-            TwineNode1 twineNode = new TwineNode1(data[i]);
-			//twineData.Add(twineNode.Parse(rawData[i]));
+			TwineNode1 twineNode = new TwineNode1(data[i], ';');
         }
 		//current = twineData[0];
-    }*/
+    }
 
     // Update is called once per frame
     void Update()

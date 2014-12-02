@@ -6,8 +6,9 @@ public class TwineNode1
 {
 	string passage;
 	string content;
+	string speaker;
 	List<string> linkTitles = new List<string>();
-	public List<string> links = new List<string>();
+	List<string> links = new List<string>();
 	string nextPassage;
 
 	public string Passage {get{return passage;} set{passage = value;}}
@@ -82,5 +83,45 @@ public class TwineNode1
             	content = data;
             	Debug.Log("Content: "+content);
             }
+	}
+
+	public TwineNode1(string data, char split)
+	{
+		if (data.IndexOf("[[") != -1)
+		{
+			int startTitle = data.IndexOf("[[") + 2;
+			int endTitle = data.IndexOf("|");
+			linkTitles.Add(data.Substring(startTitle, endTitle - startTitle));
+			int startLink = data.IndexOf("|") + 1;
+			int endLink = data.IndexOf("]]");
+			links.Add(data.Substring(startLink, endLink - startLink));
+			Debug.Log("Title: " + LinkTitle + "\n Link: " + Link);
+		}
+		if (data.Length == 0)
+		{
+			Debug.Log("Blank: " + data);
+		}
+		if (data.IndexOf ("::") != -1)
+		{
+			int startPassage = data.IndexOf ("::") + 2;
+			int endPassage = data.IndexOf ("\r\n");
+			passage = data.Substring (startPassage, endPassage);
+			Debug.Log ("Start of Passage: " + passage);
+
+			string tempContent = data.Substring(endPassage);
+			string[] temp = tempContent.Split (split);
+			Debug.Log (temp.Length);
+			if (temp.Length > 1 && temp.Length < 3)
+			{
+				speaker = temp [0];
+				content = temp [1];
+				Debug.Log ("Speaker: " + speaker);
+			} 
+			else 
+			{
+				content = tempContent;
+			}
+			Debug.Log ("Content: " + content);
+		}
 	}
 }
