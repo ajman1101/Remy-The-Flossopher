@@ -8,14 +8,16 @@ public class TwineImporter1
 {
 
     // Use this for initialization
-    List<string> twineData = new List<string>();
+    List<string> twineDataList = new List<string>();
+	TwineData1 twineData;
+	//List<TwineNode1> twineNodes = new List<TwineNode1> ();
 
     public TwineImporter1()
     {
         string path = Application.dataPath + @"\Resources\dialogue.txt";
         ReadTwineData(path);
         //ShowTwineData(twineData);
-		ParseTwineData(twineData);
+		ParseTwineData(twineDataList);
     }
 
     public void ReadTwineData(string path)
@@ -37,7 +39,7 @@ public class TwineImporter1
 			file = temp.Split(split, StringSplitOptions.RemoveEmptyEntries);
             foreach (string s in file)
             {
-                twineData.Add("::" + s);
+                twineDataList.Add("::" + s);
             }
         }
 
@@ -58,12 +60,23 @@ public class TwineImporter1
 
 	public void ParseTwineData(List<string> data)
     {
-    	for (int i = 0; i < data.Count; i++)
+    	/*for (int i = 0; i < data.Count; i++)
         {
-			TwineNode1 twineNode = new TwineNode1(data[i], ';');
+			TwineNode1 twineNode = new TwineNode1(data[i], ':');
+			twineNodes[i] = twineNode;
         }
 		//current = twineData[0];
+		twineData.current = twineNodes [0];*/
+		twineData = new TwineData1(data, ':');
     }
+
+	public TwineData1 TwineData
+	{
+		get
+		{
+			return twineData;
+		}
+	}
 
     // Update is called once per frame
     void Update()

@@ -27,6 +27,7 @@ public class AutoType : MonoBehaviour {
 	public bool choice = false;
 	Vector3 mousePos;
 	public TwineImporter1 Twine;
+	public List<string> choicesList;
 
 	// Use this for initialization
 	void Start () {
@@ -96,7 +97,7 @@ public class AutoType : MonoBehaviour {
 		}
 		else if (choice == true)
 		{
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),list[count].choice,skin))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),choicesList[0],skin))
 			{
 				//message = list[count+4].text;
 				//speaker = list[count+4].speaker;
@@ -117,7 +118,7 @@ public class AutoType : MonoBehaviour {
 				count+=8;
 			}
 
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),list[count+1].choice,skin))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),choicesList[1],skin))
 			{
 				//message = list[count+5].text;
 				//speaker = list[count+5].speaker;
@@ -125,7 +126,7 @@ public class AutoType : MonoBehaviour {
 				explosion.enabled = true;
 			}
 
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+2].choice,skin))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),choicesList[2],skin))
 			{
 				//message = list[count+6].text;
 				//speaker = list[count+6].speaker;
@@ -133,7 +134,7 @@ public class AutoType : MonoBehaviour {
 				explosion.enabled = true;
 			}
 
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+3].choice,skin))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),choicesList[3],skin))
 			{
 				//message = list[count+7].text;
 				//speaker = list[count+7].speaker;
@@ -147,7 +148,7 @@ public class AutoType : MonoBehaviour {
 	IEnumerator TypeText () {
 		canClick = false;
 		message = "";
-		//Debug.Log(Twine.data.Current.Link);
+		//Debug.Log(Twine.TwineData.Current.Link);
 		//int speakerTo = Twine.data.Current.Content.IndexOf(":");
 		//speaker = Twine.data.Current.Content;
 		if (speaker == "Remy")
@@ -171,20 +172,29 @@ public class AutoType : MonoBehaviour {
 			comcast.enabled = true;
 			comcastAudio.Play();
 		}
-		if(list[count].choice == null)
+		if(Twine.TwineData.Current.LinkTitle[0] == "Test")
 		{
 			choice = false;
-			foreach (char letter in list[count].text.ToCharArray()) 
+			/*foreach (char letter in Twine.TwineData.current.Content.ToCharArray()) 
 			{
 				message += letter;
 				yield return 0;
 				yield return new WaitForSeconds (letterPause);
-			}
-			count++;
+			}*/
+			speaker = Twine.TwineData.Current.Speaker;
+			message = Twine.TwineData.Current.Content;
+			Debug.Log("Message: " + message);
+			yield return 0;
+			Debug.Log (Twine.TwineData.Current.Link);
+			Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
 		}
-		else if(list[count].choice != null)
+		else
 		{	
 			choice = true;
+			foreach (string currentChoice in Twine.TwineData.Current.LinkTitle)
+			{
+				choicesList.Add (currentChoice);
+			}
 		//	count+=4;
 		}
 			

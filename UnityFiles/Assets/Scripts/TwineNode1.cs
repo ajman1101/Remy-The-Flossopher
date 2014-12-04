@@ -13,20 +13,41 @@ public class TwineNode1
 
 	public string Passage {get{return passage;} set{passage = value;}}
 	public string Content {get{return content;} set{content = value;}}
+	public string Speaker {get{return speaker;} set{speaker = value;}}
 	
-	public string LinkTitle 
+	public List<string> LinkTitle 
 	{
 		get
 		{
-			foreach(string s in linkTitles)
+			/*foreach(string s in linkTitles)
 			{/*
 				if(s == data)
 				{
 					return s;
-				}*/
+				}
 				return s;
 			}
-			return null;
+			return null;*/
+			return linkTitles;
+		}
+	}
+
+	public string LinkTitleData
+	{
+		get
+		{
+			if(linkTitles.Count > 1)
+			{
+				foreach(string s in linkTitles)
+				{
+					return s;
+				}
+				return null;
+			}
+			else
+			{
+				return linkTitles[0];
+			}
 		}
 	}
 
@@ -66,7 +87,7 @@ public class TwineNode1
                 int startLink = data.IndexOf("|") + 1;
                 int endLink = data.IndexOf("]]");
                 links.Add(data.Substring(startLink, endLink - startLink));
-                Debug.Log("Title: " + LinkTitle + "\n Link: " + Link);
+                Debug.Log("Title: " + LinkTitleData + "\n Link: " + Link);
             }
         if (data.Length == 0)
             {
@@ -95,20 +116,21 @@ public class TwineNode1
 			int startLink = data.IndexOf("|") + 1;
 			int endLink = data.IndexOf("]]");
 			links.Add(data.Substring(startLink, endLink - startLink));
-			Debug.Log("Title: " + LinkTitle + "\n Link: " + Link);
+			Debug.Log("Title: " + LinkTitleData + "\n Link: " + Link);
 		}
 		if (data.Length == 0)
 		{
 			Debug.Log("Blank: " + data);
 		}
-		if (data.IndexOf ("::") != -1)
+		if (data.IndexOf ("::") != -1 && data.IndexOf("[[") != -1)
 		{
 			int startPassage = data.IndexOf ("::") + 2;
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage);
 			Debug.Log ("Start of Passage: " + passage);
 
-			string tempContent = data.Substring(endPassage);
+			int endContent = data.IndexOf ("[[");
+			string tempContent = data.Substring(endPassage, endContent - endPassage);
 			string[] temp = tempContent.Split (split);
 			Debug.Log (temp.Length);
 			if (temp.Length > 1 && temp.Length < 3)
