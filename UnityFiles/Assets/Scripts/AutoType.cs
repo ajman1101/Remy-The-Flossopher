@@ -18,7 +18,7 @@ public class AutoType : MonoBehaviour {
 	public AudioSource judgeAudio = new AudioSource();
 	public AudioSource comcastAudio = new AudioSource();
 	public AudioSource musicAudio = new AudioSource();
-	public List<Frame> list = new List<Frame> ();
+	//public List<Frame> list = new List<Frame> ();
 	//public Game data = new Game();
 	int count = 0;
 	string message = "";
@@ -98,8 +98,8 @@ public class AutoType : MonoBehaviour {
 		{
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),list[count].choice,skin))
 			{
-				message = list[count+4].text;
-				speaker = list[count+4].speaker;
+				//message = list[count+4].text;
+				//speaker = list[count+4].speaker;
 				//Checks for number of charecters to display
 				if(speaker == "Remy/Comcast")
 				{
@@ -119,24 +119,24 @@ public class AutoType : MonoBehaviour {
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),list[count+1].choice,skin))
 			{
-				message = list[count+5].text;
-				speaker = list[count+5].speaker;
+				//message = list[count+5].text;
+				//speaker = list[count+5].speaker;
 				choice = false;
 				explosion.enabled = true;
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+2].choice,skin))
 			{
-				message = list[count+6].text;
-				speaker = list[count+6].speaker;
+				//message = list[count+6].text;
+				//speaker = list[count+6].speaker;
 				choice = false;
 				explosion.enabled = true;
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),list[count+3].choice,skin))
 			{
-				message = list[count+7].text;
-				speaker = list[count+7].speaker;
+				//message = list[count+7].text;
+				//speaker = list[count+7].speaker;
 				choice = false;
 				explosion.enabled = true;
 			}	
