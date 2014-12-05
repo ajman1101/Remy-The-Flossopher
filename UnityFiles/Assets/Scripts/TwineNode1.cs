@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class TwineNode1
 {
@@ -110,13 +111,36 @@ public class TwineNode1
 	{
 		if (data.IndexOf("[[") != -1)
 		{
-			int startTitle = data.IndexOf("[[") + 2;
-			int endTitle = data.IndexOf("|");
-			linkTitles.Add(data.Substring(startTitle, endTitle - startTitle));
-			int startLink = data.IndexOf("|") + 1;
-			int endLink = data.IndexOf("]]");
-			links.Add(data.Substring(startLink, endLink - startLink));
-			Debug.Log("Title: " + LinkTitleData + "\n Link: " + Link);
+			string[] choicesSplit = {"[["};
+			string[] choices = data.Split(choicesSplit, StringSplitOptions.RemoveEmptyEntries);
+			if(choices.Length > 2)
+			{
+				for(int i = 1; i < choices.Length; i++)
+				{
+					//Debug.Log (choices[i]);
+					int endTitle = choices[i].IndexOf("|");
+					linkTitles.Add(choices[i].Substring(0, endTitle));
+					int startLink = choices[i].IndexOf("|") + 1;
+					int endLink = choices[i].IndexOf("]]");
+					if (endLink != -1)
+					{
+						links.Add(choices[i].Substring(startLink, endLink - startLink));
+					}
+					else
+					{
+						links.Add(choices[i].Substring(startLink));
+					}
+				}
+			}
+			else
+			{
+				int startTitle = data.IndexOf("[[") + 2;
+				int endTitle = data.IndexOf("|");
+				linkTitles.Add(data.Substring(startTitle, endTitle - startTitle));
+				int startLink = data.IndexOf("|") + 1;
+				int endLink = data.IndexOf("]]");
+				links.Add(data.Substring(startLink, endLink - startLink));
+			}
 		}
 		if (data.Length == 0)
 		{
@@ -124,26 +148,26 @@ public class TwineNode1
 		}
 		if (data.IndexOf ("::") != -1 && data.IndexOf("[[") != -1)
 		{
-			int startPassage = data.IndexOf ("::") + 2;
+			int startPassage = data.IndexOf ("::") + 3;
 			int endPassage = data.IndexOf ("\r\n");
-			passage = data.Substring (startPassage, endPassage);
+			passage = data.Substring (startPassage, endPassage - 1);
 			Debug.Log ("Start of Passage: " + passage);
 
 			int endContent = data.IndexOf ("[[");
 			string tempContent = data.Substring(endPassage, endContent - endPassage);
 			string[] temp = tempContent.Split (split);
-			Debug.Log (temp.Length);
+			//Debug.Log (temp.Length);
 			if (temp.Length > 1 && temp.Length < 3)
 			{
 				speaker = temp [0];
 				content = temp [1];
-				Debug.Log ("Speaker: " + speaker);
+				//Debug.Log ("Speaker: " + speaker);
 			} 
 			else 
 			{
 				content = tempContent;
 			}
-			Debug.Log ("Content: " + content);
+			//Debug.Log ("Content: " + content);
 		}
 	}
 }

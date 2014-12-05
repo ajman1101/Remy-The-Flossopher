@@ -20,7 +20,7 @@ public class AutoType : MonoBehaviour {
 	public AudioSource musicAudio = new AudioSource();
 	//public List<Frame> list = new List<Frame> ();
 	//public Game data = new Game();
-	int count = 0;
+	//int count = 0;
 	string message = "";
 	string speaker = "";
 	public bool canClick = false;
@@ -94,6 +94,7 @@ public class AutoType : MonoBehaviour {
 		{
 			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-5, Screen.width - 10, Screen.height/4), message,skin);
 			GUI.Box(new Rect(Screen.width - (Screen.width-5), 3*(Screen.height/4)-6*(Screen.height/8), Screen.width/5, Screen.height/10), speaker,skin);
+			//Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
 		}
 		else if (choice == true)
 		{
@@ -115,10 +116,10 @@ public class AutoType : MonoBehaviour {
 				}
 
 				choice = false;
-				count+=8;
+				Twine.TwineData.NextNode(choicesList[0]);
 			}
 
-			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),choicesList[1],skin))
+/*			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),choicesList[1],skin))
 			{
 				//message = list[count+5].text;
 				//speaker = list[count+5].speaker;
@@ -140,7 +141,7 @@ public class AutoType : MonoBehaviour {
 				//speaker = list[count+7].speaker;
 				choice = false;
 				explosion.enabled = true;
-			}	
+			}*/	
 		}
 		
 	}
@@ -183,10 +184,11 @@ public class AutoType : MonoBehaviour {
 			}*/
 			speaker = Twine.TwineData.Current.Speaker;
 			message = Twine.TwineData.Current.Content;
-			Debug.Log("Message: " + message);
-			yield return 0;
-			Debug.Log (Twine.TwineData.Current.Link);
+			Debug.Log("Message: " + message + " Next Link: " + Twine.TwineData.Current.Link);
 			Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
+			yield return 0;
+			//Debug.Log (Twine.TwineData.Current.Link);
+			//Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
 		}
 		else
 		{	

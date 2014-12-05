@@ -49,11 +49,10 @@ public class TwineData1
 	//go to specific node
 	public void NextNode(string link)
 	{
-		Debug.Log ("hello: " + current.Link);
 		for(int i = 0; i < Data.Count; i++)
 		{
-			Debug.Log("HI: " + Data[i].Passage);
-			if(current.Link == Data[i].Passage)
+			Debug.Log (int.Parse(link) + " " + int.Parse(Data[i].Passage));
+			if(int.Parse(link) == int.Parse(Data[i].Passage))
 			{
 				current = Data[i];
 			}
