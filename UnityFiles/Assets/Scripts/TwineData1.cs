@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -51,11 +52,16 @@ public class TwineData1
 	{
 		for(int i = 0; i < Data.Count; i++)
 		{
-			Debug.Log (int.Parse(link) + " " + int.Parse(Data[i].Passage));
-			if(int.Parse(link) == int.Parse(Data[i].Passage))
-			{
-				current = Data[i];
-			}
+            Debug.Log("Data: " + Data[i].Passage);
+            if (Data[i].Passage != "StoryAuthor" )
+            {
+                if (Int32.Parse(link) == Int32.Parse(Data[i].Passage))
+                {
+                    Debug.Log("Hi");
+                    current = Data[i];
+                    break;
+                }
+            }
 		}
 	}
 

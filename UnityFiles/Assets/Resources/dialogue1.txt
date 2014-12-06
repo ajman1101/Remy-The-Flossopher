@@ -1,4 +1,4 @@
-﻿:: 0
+﻿:: Start
 Remy: Throttling Cat Pictures.
 [[Test|1]]
 
@@ -155,8 +155,11 @@ Remy: So charging established Content Providers doesn’t stifle innovation?
 
 :: 44
 Comcast: No, those established Content Providers have the capital and resources to innovate and invest in the network they are using more of than most. 
+
 Remy: Can anyone invest enough to keep the Internet afloat?
+
 Comcast: ….No….
+
 Narrator: With the collapse of the Internet, and thus society, the world implodes.
 GAME OVER.
 [[Test|39]]
@@ -184,6 +187,10 @@ Comcast: Video is what kills our network! All Video Content Providers need to be
 [[Test|34]]
 
 
+:: StoryAuthor
+Andrew Mandula and Nathaniel Case
+
+
 :: 42
 Remy: Free markets are for people not corporations.
 [[Test|45]]
@@ -191,9 +198,13 @@ Remy: Free markets are for people not corporations.
 
 :: 45
 C: Corporations are people!
+
 R: Exactly!
+
 J: As Corporations are considered people by this courtroom, I see no issue to resolve in this case. Case Closed.
+
 The World Implodes.
+
 GAME OVER.
 [[Test|39]]
 
@@ -225,7 +236,9 @@ Remy: With no regulation, finally humanity can ascend to being controlled by cor
 
 :: 46
 C: Finally Comcast can rule the world! All hail the great Comcast! 
+
 Narrator: With the world under Comcast’s mismanaged grasp, the world suffers an implosion.
+
 GAME OVER.
 [[Test|39]]
 
@@ -270,7 +283,9 @@ Remy: So let’s reclassify Internet Service Providers!
 
 :: 47
 Comcast: These charges creates an equal Internet for our users. As Content Providers gain market traction, they will easily exist in the Internet ecosystem. 
+
 Remy: More pay for more play? Create an inequality to create an equalize internet?
+
 Comcast: As Internet Service Providers are an Information Service, this is a fair and legal course of action for them to take.
 [[Test|48]]
 
@@ -294,8 +309,10 @@ Remy: How was this classification decided?
 Remy: So only Internet Service Providers can decide what Content Providers get charged or can use more data?
 [[Test|53]]
 
+
 :: 56
 Narrator: But people did not see Net Neutrality as important, and the globe spiraled into a Comcast controlled corporate-nation. 
+
 THE END?
 
 

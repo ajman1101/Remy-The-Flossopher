@@ -184,9 +184,9 @@ public class AutoType : MonoBehaviour {
 			}*/
 			speaker = Twine.TwineData.Current.Speaker;
 			message = Twine.TwineData.Current.Content;
-			Debug.Log("Message: " + message + " Next Link: " + Twine.TwineData.Current.Link);
-			Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
-			yield return 0;
+            Debug.Log("Message: " + message + " Next Link: " + Twine.TwineData.Current.Link);
+            Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
+            yield return 0;
 			//Debug.Log (Twine.TwineData.Current.Link);
 			//Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
 		}
