@@ -18,9 +18,6 @@ public class AutoType : MonoBehaviour {
 	public AudioSource judgeAudio = new AudioSource();
 	public AudioSource comcastAudio = new AudioSource();
 	public AudioSource musicAudio = new AudioSource();
-	//public List<Frame> list = new List<Frame> ();
-	//public Game data = new Game();
-	//int count = 0;
 	string message = "";
 	string speaker = "";
 	public bool canClick = false;
@@ -28,6 +25,7 @@ public class AutoType : MonoBehaviour {
 	Vector3 mousePos;
 	public TwineImporter1 Twine;
 	public List<string> choicesList;
+	public List<string> choicesLinksList;
 
 	// Use this for initialization
 	void Start () {
@@ -53,24 +51,7 @@ public class AutoType : MonoBehaviour {
 		// 		"keeps Internet Service Provider fair and balanced about their data transfer. " +
 		// 		"Without Net Neutrality, cat pictures online could be eradicated. ";
 
-		// data = loadFrames("Assets/XML/dialogue.xml");
-		// foreach(Frame f in data.getFrames){
-		// 	list.Add(f);
-		// }
-		// Debug.Log(list.Count);
-
 		StartCoroutine (TypeText ());
-	}
-	//though a function for the Game class
-	//this is kept outside to be used in unity runtime
-	Game loadFrames(string xmlFile){
-		System.Xml.Serialization.XmlSerializer serializer = 
-			new System.Xml.Serialization.XmlSerializer(typeof(Game));
-		System.IO.TextReader reader = 
-			new System.IO.StreamReader(xmlFile);
-		Game ObjItems = (Game)serializer.Deserialize(reader);
-		reader.Close();
-		return ObjItems;
 	}
 	
 	
@@ -81,6 +62,7 @@ public class AutoType : MonoBehaviour {
 			comcast.enabled = false;
 			judge.enabled = false;
 			explosion.enabled = false;
+			StopCoroutine(createMessage());
 			StartCoroutine (TypeText());
 		}
 
@@ -100,10 +82,13 @@ public class AutoType : MonoBehaviour {
 		{
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4), Screen.width - 10, Screen.height/4/4),choicesList[0],skin))
 			{
-				//message = list[count+4].text;
-				//speaker = list[count+4].speaker;
+				Twine.TwineData.NextNode(choicesLinksList[0]);
+				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+				//StartCoroutine(createMessage());
+				message = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Content;
 				//Checks for number of charecters to display
-				if(speaker == "Remy/Comcast")
+				/*if(speaker == "Remy/Comcast")
 				{
 					remy.enabled = true;
 					comcast.enabled = true;
@@ -113,35 +98,46 @@ public class AutoType : MonoBehaviour {
 					remy.enabled = true;
 					comcast.enabled = true;
 					judge.enabled = true;
-				}
+				}*/
 
 				choice = false;
-				Twine.TwineData.NextNode(choicesList[0]);
 			}
 
-/*			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),choicesList[1],skin))
+			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+Screen.height/4/4, Screen.width - 10, Screen.height/4/4),choicesList[1],skin))
 			{
-				//message = list[count+5].text;
-				//speaker = list[count+5].speaker;
+				Twine.TwineData.NextNode(choicesLinksList[1]);
+				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+				//StartCoroutine(createMessage());
+				message = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Content;
 				choice = false;
 				explosion.enabled = true;
+				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+2*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),choicesList[2],skin))
 			{
-				//message = list[count+6].text;
-				//speaker = list[count+6].speaker;
+				Twine.TwineData.NextNode(choicesLinksList[2]);
+				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+				//StartCoroutine(createMessage());
+				message = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Content;
 				choice = false;
 				explosion.enabled = true;
+				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 			}
 
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),choicesList[3],skin))
 			{
-				//message = list[count+7].text;
-				//speaker = list[count+7].speaker;
+				Twine.TwineData.NextNode(choicesLinksList[3]);
+				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+				//StartCoroutine(createMessage());
+				message = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Content;
 				choice = false;
 				explosion.enabled = true;
-			}*/	
+				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+			}	
 		}
 		
 	}
@@ -149,9 +145,8 @@ public class AutoType : MonoBehaviour {
 	IEnumerator TypeText () {
 		canClick = false;
 		message = "";
-		//Debug.Log(Twine.TwineData.Current.Link);
-		//int speakerTo = Twine.data.Current.Content.IndexOf(":");
-		//speaker = Twine.data.Current.Content;
+		speaker = Twine.TwineData.Current.Speaker;
+		TwineNode1 tempNode;
 		if (speaker == "Remy")
 		{
 			remy.enabled = true;
@@ -176,32 +171,40 @@ public class AutoType : MonoBehaviour {
 		if(Twine.TwineData.Current.LinkTitle[0] == "Test")
 		{
 			choice = false;
-			/*foreach (char letter in Twine.TwineData.current.Content.ToCharArray()) 
+			speaker = Twine.TwineData.Current.Speaker;
+			foreach (char letter in Twine.TwineData.Current.Content.ToCharArray()) 
 			{
 				message += letter;
 				yield return 0;
 				yield return new WaitForSeconds (letterPause);
-			}*/
-			speaker = Twine.TwineData.Current.Speaker;
-			message = Twine.TwineData.Current.Content;
-            Debug.Log("Message: " + message + " Next Link: " + Twine.TwineData.Current.Link);
-            Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
-            yield return 0;
-			//Debug.Log (Twine.TwineData.Current.Link);
-			//Twine.TwineData.NextNode(Twine.TwineData.Current.Link);
+			}
+            Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 		}
 		else
 		{	
 			choice = true;
-			foreach (string currentChoice in Twine.TwineData.Current.LinkTitle)
+			tempNode = Twine.TwineData.Current;
+			foreach (string currentChoice in Twine.TwineData.Current.Link)
 			{
-				choicesList.Add (currentChoice);
+				Twine.TwineData.NextNode(currentChoice);
+				choicesLinksList.Add(currentChoice);
+				choicesList.Add (Twine.TwineData.Current.Content);
 			}
-		//	count+=4;
+			Twine.TwineData.Current = tempNode;
 		}
 			
 		
 		canClick = true;
 		mouse.enabled = true;
+	}
+
+	IEnumerator createMessage()
+	{
+		foreach (char letter in Twine.TwineData.Current.Content) 
+		{
+			message += letter;
+			yield return 0;
+			yield return new WaitForSeconds (letterPause);
+		}
 	}
 }

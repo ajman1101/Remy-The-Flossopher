@@ -60,8 +60,13 @@ public class TwineNode1
 			return links[0];
 		}
 	}*/
+	public List<string> Link
+	{
+		get{ return links;}
+	}
 
-	public string Link
+
+	public string LinkData
 	{
 		get{
 			foreach(string s in links)
@@ -88,7 +93,6 @@ public class TwineNode1
                 int startLink = data.IndexOf("|") + 1;
                 int endLink = data.IndexOf("]]");
                 links.Add(data.Substring(startLink, endLink - startLink));
-                Debug.Log("Title: " + LinkTitleData + "\n Link: " + Link);
             }
         if (data.Length == 0)
             {
@@ -98,12 +102,10 @@ public class TwineNode1
             {
                 int startPassage = data.IndexOf("::") + 2;
                 passage = data.Substring(startPassage);
-                Debug.Log("Start of Passage: " + passage);
             }
         else if (data.IndexOf("[[") == -1 && data.Length != 0)
             {
             	content = data;
-            	Debug.Log("Content: "+content);
             }
 	}
 
@@ -117,7 +119,6 @@ public class TwineNode1
 			{
 				for(int i = 1; i < choices.Length; i++)
 				{
-					//Debug.Log (choices[i]);
 					int endTitle = choices[i].IndexOf("|");
 					linkTitles.Add(choices[i].Substring(0, endTitle));
 					int startLink = choices[i].IndexOf("|") + 1;
@@ -144,30 +145,26 @@ public class TwineNode1
 		}
 		if (data.Length == 0)
 		{
-			Debug.Log("Blank: " + data);
+
 		}
 		if (data.IndexOf ("::") != -1 && data.IndexOf("[[") != -1)
 		{
 			int startPassage = data.IndexOf ("::") + 3;
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
-			Debug.Log ("Start of Passage: " + passage);
 
 			int endContent = data.IndexOf ("[[");
 			string tempContent = data.Substring(endPassage, endContent - endPassage);
 			string[] temp = tempContent.Split (split);
-			//Debug.Log (temp.Length);
 			if (temp.Length > 1 && temp.Length < 3)
 			{
 				speaker = temp [0];
 				content = temp [1];
-				//Debug.Log ("Speaker: " + speaker);
 			} 
 			else 
 			{
 				content = tempContent;
 			}
-			//Debug.Log ("Content: " + content);
 		}
 	}
 }

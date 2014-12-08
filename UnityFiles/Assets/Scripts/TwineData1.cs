@@ -40,7 +40,7 @@ public class TwineData1
 	{
 		for(int i = 0; i < Data.Count; i++)
 		{
-			if(current.Link == Data[i].Passage)
+			if(current.LinkData == Data[i].Passage)
 			{
 				current = Data[i];
 			}
@@ -52,12 +52,10 @@ public class TwineData1
 	{
 		for(int i = 0; i < Data.Count; i++)
 		{
-            Debug.Log("Data: " + Data[i].Passage);
             if (Data[i].Passage != "StoryAuthor" )
             {
                 if (Int32.Parse(link) == Int32.Parse(Data[i].Passage))
                 {
-                    Debug.Log("Hi");
                     current = Data[i];
                     break;
                 }
@@ -70,6 +68,10 @@ public class TwineData1
 		get
 		{
 			return current;
+		}
+		set
+		{
+			current = value;
 		}
 	}
 }
