@@ -86,7 +86,7 @@ public class AutoType : MonoBehaviour {
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				//StartCoroutine(createMessage());
 				message = Twine.TwineData.Current.Content;
-				speaker = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Speaker;
 				//Checks for number of charecters to display
 				/*if(speaker == "Remy/Comcast")
 				{
@@ -109,7 +109,7 @@ public class AutoType : MonoBehaviour {
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				//StartCoroutine(createMessage());
 				message = Twine.TwineData.Current.Content;
-				speaker = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Speaker;
 				choice = false;
 				explosion.enabled = true;
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
@@ -121,7 +121,7 @@ public class AutoType : MonoBehaviour {
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				//StartCoroutine(createMessage());
 				message = Twine.TwineData.Current.Content;
-				speaker = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Speaker;
 				choice = false;
 				explosion.enabled = true;
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
@@ -133,7 +133,7 @@ public class AutoType : MonoBehaviour {
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				//StartCoroutine(createMessage());
 				message = Twine.TwineData.Current.Content;
-				speaker = Twine.TwineData.Current.Content;
+				speaker = Twine.TwineData.Current.Speaker;
 				choice = false;
 				explosion.enabled = true;
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
@@ -147,12 +147,12 @@ public class AutoType : MonoBehaviour {
 		message = "";
 		speaker = Twine.TwineData.Current.Speaker;
 		TwineNode1 tempNode;
-		if (speaker == "Remy")
+		if (speaker == "\r\nRemy")
 		{
 			remy.enabled = true;
 			remyAudio.Play();
 		}
-		if (speaker == "Comcast") 
+		if (speaker == "\r\nComcast") 
 		{
 			comcast.enabled = true;
 			comcastAudio.Play();
@@ -162,7 +162,7 @@ public class AutoType : MonoBehaviour {
 			judge.enabled = true;
 			judgeAudio.Play();
 		}
-		else if(speaker == "Remy/Comcast")
+		else if(speaker == "\r\nRemy/Comcast")
 		{
 			remy.enabled = true;
 			comcast.enabled = true;
