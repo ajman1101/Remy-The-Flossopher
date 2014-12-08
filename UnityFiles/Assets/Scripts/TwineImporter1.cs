@@ -27,7 +27,7 @@ public class TwineImporter1
         string[] file;
 		string[] split = {"::"};
 
-		temp = Resources.Load("dialogue", typeof(TextAsset)).ToString();
+		temp = Resources.Load("dialogueNew", typeof(TextAsset)).ToString();
 		Debug.Log(temp);
 
         try

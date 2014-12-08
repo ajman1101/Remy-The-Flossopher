@@ -6,30 +6,53 @@ using System;
 public class TwineNode1
 {
 	string passage;
-	string content;
-	string speaker;
+	List<string> content = new List<string>();
+	List<string> speaker = new List<string>();
 	List<string> linkTitles = new List<string>();
 	List<string> links = new List<string>();
 	string nextPassage;
 
 	public string Passage {get{return passage;} set{passage = value;}}
-	public string Content {get{return content;} set{content = value;}}
-	public string Speaker {get{return speaker;} set{speaker = value;}}
-	
-	public List<string> LinkTitle 
+	public List<string> Content {get{return content;} set{content = value;}}
+	public List<string> Speaker {get{return speaker;} set{speaker = value;}}
+	public List<string> LinkTitle {get{return linkTitles;}}
+	public List<string> Link{get{ return links;}}
+
+	public string ContentData
 	{
 		get
 		{
-			/*foreach(string s in linkTitles)
-			{/*
-				if(s == data)
+			if(content.Count > 1)
+			{
+				foreach(string s in content)
 				{
 					return s;
 				}
-				return s;
+				return null;
 			}
-			return null;*/
-			return linkTitles;
+			else
+			{
+				return content[0];
+			}
+		}
+	}
+
+	public string SpeakerData
+	{
+		get
+		{
+			if(speaker.Count > 1)
+			{
+				foreach(string s in speaker)
+				{
+					return s;
+				}
+				return null;
+			}
+			else
+			{
+				return speaker[0];
+			}
 		}
 	}
 
@@ -52,29 +75,11 @@ public class TwineNode1
 		}
 	}
 
-	/*
-	public string Link()
-	{
-		get:
-		{
-			return links[0];
-		}
-	}*/
-	public List<string> Link
-	{
-		get{ return links;}
-	}
-
-
 	public string LinkData
 	{
 		get{
 			foreach(string s in links)
-			{/*
-				if(s == data)
-				{
-					return s;
-				}*/
+			{
 				return s;
 			}
 			return null;
@@ -105,7 +110,7 @@ public class TwineNode1
             }
         else if (data.IndexOf("[[") == -1 && data.Length != 0)
             {
-            	content = data;
+            	content.Add(data);
             }
 	}
 
@@ -156,15 +161,19 @@ public class TwineNode1
 			int endContent = data.IndexOf ("[[");
 			string tempContent = data.Substring(endPassage, endContent - endPassage);
 			string[] temp = tempContent.Split (split);
-			if (temp.Length > 1 && temp.Length < 3)
+			Debug.Log (temp.Length);
+			if (temp.Length >= 2 && (temp.Length%2) == 0)
 			{
 				int startSpeaker = temp[0].IndexOf("\r\n")+2;
-				speaker = temp[0].Substring(startSpeaker);
-				content = temp [1];
+				for(int i = 0; i < temp.Length; i+=2)
+				{
+					speaker.Add(temp[i].Substring(startSpeaker));
+					content.Add(temp[i+1]);
+				}
 			} 
 			else 
 			{
-				content = tempContent;
+				content.Add(tempContent);
 			}
 		}
 	}
