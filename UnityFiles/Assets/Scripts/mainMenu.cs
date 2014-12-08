@@ -43,8 +43,8 @@ public class mainMenu : MonoBehaviour {
 		}
 		else if(ShowCredits == true)
 		{
-			GUI.Box(new Rect(Screen.width- (Screen.width-20), Screen.height/20, Screen.width- 10, Screen.height-10),credit, skin);
-			if(GUI.Button(new Rect(Screen.width- (Screen.width-20), Screen.height*9/10, Screen.width-10, Screen.height-10),"Back",skin));
+			GUI.Box(new Rect(Screen.width- (Screen.width-20), Screen.height/20, Screen.width- 100, Screen.height-10),credit, skin);
+			if(GUI.Button(new Rect(Screen.width- (Screen.width-20), Screen.height - (Screen.height-100), Screen.width-10, Screen.height-10),"Back",skin));
 			{
 				ShowCredits = false;
 			}
