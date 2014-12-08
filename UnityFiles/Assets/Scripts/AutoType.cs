@@ -65,6 +65,9 @@ public class AutoType : MonoBehaviour {
 			StopCoroutine(createMessage());
 			StartCoroutine (TypeText());
 		}
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+        Application.Quit();
+    }
 
 	}
 	
