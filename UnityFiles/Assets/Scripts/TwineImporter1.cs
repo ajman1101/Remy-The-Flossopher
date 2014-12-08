@@ -14,26 +14,30 @@ public class TwineImporter1
 
     public TwineImporter1()
     {
-        string path = Application.dataPath + @"\Resources\dialogue.txt";
+        string path = Application.dataPath + @"/Resources/dialogue.txt";
         ReadTwineData(path);
         //ShowTwineData(twineData);
 		ParseTwineData(twineDataList);
     }
 
     public void ReadTwineData(string path)
-    {
+	{
+		Debug.Log (path);
         string temp;
         string[] file;
 		string[] split = {"::"};
+
+		temp = Resources.Load("dialogue", typeof(TextAsset)).ToString();
+		Debug.Log(temp);
 
         try
         {
             //create a stream reader
             //get the data in the text file
             //close the stream reader
-            StreamReader sr = new StreamReader(path);
-            temp = sr.ReadToEnd();
-            sr.Close();
+            //StreamReader sr = new StreamReader(path);
+            //temp = sr.ReadToEnd();
+            //sr.Close();
 
             //parse large string by lines into an list
 			file = temp.Split(split, StringSplitOptions.RemoveEmptyEntries);
