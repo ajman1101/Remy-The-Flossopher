@@ -158,7 +158,8 @@ public class TwineNode1
 			string[] temp = tempContent.Split (split);
 			if (temp.Length > 1 && temp.Length < 3)
 			{
-				speaker = temp [0];
+				int startSpeaker = temp[0].IndexOf("\r\n")+2;
+				speaker = temp[0].Substring(startSpeaker);
 				content = temp [1];
 			} 
 			else 

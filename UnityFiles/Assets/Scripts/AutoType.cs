@@ -147,12 +147,12 @@ public class AutoType : MonoBehaviour {
 		message = "";
 		speaker = Twine.TwineData.Current.Speaker;
 		TwineNode1 tempNode;
-		if (speaker == "\r\nRemy")
+		if (speaker == "Remy")
 		{
 			remy.enabled = true;
 			remyAudio.Play();
 		}
-		if (speaker == "\r\nComcast") 
+		if (speaker == "Comcast") 
 		{
 			comcast.enabled = true;
 			comcastAudio.Play();
@@ -161,12 +161,6 @@ public class AutoType : MonoBehaviour {
 		{
 			judge.enabled = true;
 			judgeAudio.Play();
-		}
-		else if(speaker == "\r\nRemy/Comcast")
-		{
-			remy.enabled = true;
-			comcast.enabled = true;
-			comcastAudio.Play();
 		}
 		if(Twine.TwineData.Current.LinkTitle[0] == "Test")
 		{
