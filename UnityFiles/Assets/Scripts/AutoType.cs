@@ -147,6 +147,8 @@ public class AutoType : MonoBehaviour {
 		{	
 			choice = true;
 			tempNode = Twine.TwineData.Current;
+			choicesLinksList = new List<string>();
+			choicesList = new List<string>();
 			foreach (string currentChoice in Twine.TwineData.Current.Link)
 			{
 				Twine.TwineData.NextNode(currentChoice);
@@ -164,7 +166,7 @@ public class AutoType : MonoBehaviour {
 	IEnumerator createMessage()
 	{
 		canClick = false;
-		if (speaker == "Remy")
+		if (speaker == "Flossopher")
 		{
 			remy.enabled = true;
 			remyAudio.Play();
