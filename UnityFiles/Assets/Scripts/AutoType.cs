@@ -88,10 +88,12 @@ public class AutoType : MonoBehaviour {
 			{
 				Twine.TwineData.NextNode(choicesLinksList[0]);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+				choicesList.Clear();
+				choicesLinksList.Clear();
+				speakersList.Clear();
+				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
-				choicesList = new List<string>();
-				choicesLinksList = new List<string>();
 				choice = false;
 			}
 
@@ -99,6 +101,8 @@ public class AutoType : MonoBehaviour {
 			{
 				Twine.TwineData.NextNode(choicesLinksList[1]);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+				speakersList.Clear();
+				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
@@ -109,7 +113,8 @@ public class AutoType : MonoBehaviour {
 			{
 				Twine.TwineData.NextNode(choicesLinksList[2]);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
-				Debug.Log(Twine.TwineData.Current.Speaker.Count);
+				speakersList.Clear();
+				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
@@ -119,8 +124,9 @@ public class AutoType : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width - (Screen.width -5), 3*(Screen.height/4)+3*(Screen.height/4/4), Screen.width - 10, Screen.height/4/4),choicesList[3],skin))
 			{
 				Twine.TwineData.NextNode(choicesLinksList[3]);
-				Debug.Log(Twine.TwineData.Current.Speaker.Count);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+				speakersList.Clear();
+				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
@@ -191,11 +197,20 @@ public class AutoType : MonoBehaviour {
 					yield return 0;
 					yield return new WaitForSeconds (letterPause);
 				}
+				message+="\n";
+			}
+			if(speakersList.Count != contentList.Count)
+			{
+				foreach(char letter in contentList[speakersList.Count])
+				{
+					message += letter;
+					yield return 0;
+					yield return new WaitForSeconds (letterPause);
+				}
 			}
 		}
 		else
 		{
-			Debug.Log("Speakers: " + Twine.TwineData.Current.Speaker.Count);
 			speaker = Twine.TwineData.Current.SpeakerData;
 			if (speaker == "Flossopher")
 			{

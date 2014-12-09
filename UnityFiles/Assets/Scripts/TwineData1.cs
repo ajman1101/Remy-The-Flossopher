@@ -52,7 +52,6 @@ public class TwineData1
 	{
 		for(int i = 0; i < Data.Count; i++)
 		{
-			Debug.Log(Data[i].Passage);
             try
             {
                 if (Int32.Parse(link) == Int32.Parse(Data[i].Passage))
