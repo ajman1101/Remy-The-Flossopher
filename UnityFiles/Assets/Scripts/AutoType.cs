@@ -90,8 +90,6 @@ public class AutoType : MonoBehaviour {
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choicesList.Clear();
 				choicesLinksList.Clear();
-				speakersList.Clear();
-				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
@@ -101,8 +99,6 @@ public class AutoType : MonoBehaviour {
 			{
 				Twine.TwineData.NextNode(choicesLinksList[1]);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
-				speakersList.Clear();
-				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
@@ -113,8 +109,6 @@ public class AutoType : MonoBehaviour {
 			{
 				Twine.TwineData.NextNode(choicesLinksList[2]);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
-				speakersList.Clear();
-				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
@@ -125,13 +119,13 @@ public class AutoType : MonoBehaviour {
 			{
 				Twine.TwineData.NextNode(choicesLinksList[3]);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
-				speakersList.Clear();
-				contentList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
 				explosion.enabled = true;
-			}	
+			}
+			speakersList.Clear();
+			contentList.Clear();	
 		}
 		
 	}
