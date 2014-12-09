@@ -10,25 +10,22 @@ public class TwineImporter1
     // Use this for initialization
     List<string> twineDataList = new List<string>();
 	TwineData1 twineData;
-	//List<TwineNode1> twineNodes = new List<TwineNode1> ();
 
     public TwineImporter1()
     {
-        string path = Application.dataPath + @"/Resources/dialogue.txt";
-        ReadTwineData(path);
+        //string path = Application.dataPath + @"/Resources/dialogue.txt";
+        ReadTwineData();
         //ShowTwineData(twineData);
 		ParseTwineData(twineDataList);
     }
 
-    public void ReadTwineData(string path)
+    public void ReadTwineData()
 	{
-		Debug.Log (path);
         string temp;
         string[] file;
 		string[] split = {"::"};
 
 		temp = Resources.Load("dialogueNew", typeof(TextAsset)).ToString();
-		Debug.Log(temp);
 
         try
         {
@@ -71,7 +68,8 @@ public class TwineImporter1
         }
 		//current = twineData[0];
 		twineData.current = twineNodes [0];*/
-		twineData = new TwineData1(data, ':');
+		string[] split = {":","\r\n"};
+		twineData = new TwineData1(data, split);
     }
 
 	public TwineData1 TwineData

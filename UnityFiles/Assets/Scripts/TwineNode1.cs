@@ -41,7 +41,7 @@ public class TwineNode1
 	{
 		get
 		{
-			if(speaker.Count > 1)
+			if(speaker.Count >= 1)
 			{
 				foreach(string s in speaker)
 				{
@@ -51,7 +51,7 @@ public class TwineNode1
 			}
 			else
 			{
-				return speaker[0];
+				return "";
 			}
 		}
 	}
@@ -110,11 +110,12 @@ public class TwineNode1
             }
         else if (data.IndexOf("[[") == -1 && data.Length != 0)
             {
+				speaker.Add("");
             	content.Add(data);
             }
 	}
 
-	public TwineNode1(string data, char split)
+	public TwineNode1(string data, string[] split)
 	{
 		if (data.IndexOf("[[") != -1)
 		{
@@ -160,17 +161,27 @@ public class TwineNode1
 
 			int endContent = data.IndexOf ("[[");
 			string tempContent = data.Substring(endPassage, endContent - endPassage);
-			string[] temp = tempContent.Split (split);
-			Debug.Log (temp.Length);
+			string[] temp = tempContent.Split (split, StringSplitOptions.RemoveEmptyEntries);
 			if (temp.Length >= 2 && (temp.Length%2) == 0)
 			{
-				int startSpeaker = temp[0].IndexOf("\r\n")+2;
+				int startSpeaker = temp[0].IndexOf("\r\n")+1;
 				for(int i = 0; i < temp.Length; i+=2)
 				{
 					speaker.Add(temp[i].Substring(startSpeaker));
 					content.Add(temp[i+1]);
 				}
 			} 
+			else if(temp.Length >= 2)
+			{
+				int startSpeaker = temp[0].IndexOf("\r\n")+1;
+				int i;
+				for(i = 0;i < (temp.Length - 1); i+=2)
+				{
+					speaker.Add(temp[i].Substring(startSpeaker));
+					content.Add(temp[i+1]);
+				}
+				content.Add(temp[i]);
+			}
 			else 
 			{
 				content.Add(tempContent);

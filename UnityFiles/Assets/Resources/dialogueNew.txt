@@ -1,6 +1,6 @@
 ﻿:: 0
-Remy: Throttling Cat Pictures.
-[[Test|1]]
+Flossopher: Throttling Cat Pictures.
+[[Test|39]]
 
 
 :: 4
@@ -14,7 +14,7 @@ Comcast: This is a fallacy. We, at Comcast, want to bring internet users the bes
 
 
 :: 22
-Flossopher flexes muscles, courtroom is stunned. 
+ :Flossopher flexes muscles, courtroom is stunned. 
 Judge: I know for a fact I cannot carry thousands of pounds. 
 Comcast: I also cannot hold thousands of pounds.
 Judge: This seems to be an weighty issue for the Internet. Comcast, your arguments are valid and it seems necessary that Net Neutrality be overruled. Case Closed.
@@ -71,10 +71,10 @@ Flossopher: Comcast can easily handle that load.
 
 
 :: 23
-Comcast: Comcast is currently only handling a portion of its heavy data. If Comcast were to handle the full heavy load, cost would dramatically increase, making the Internet an infeasible and expensive endeavour. 
-Remy: This is the business Comcast works in. It is your responsibility to handle this load. 
+Comcast: Comcast is currently only handling a portion of its heavy data. If Comcast were to handle the full heavy load, cost would dramatically increase, making the Internet an infeasible and expensive endeavour.
+Flossopher: This is the business Comcast works in. It is your responsibility to handle this load.
 Judge: And Comcast shall handle the load. Case Closed.
-Narrator: With Comcast’s poor handling of the world’s heavy data, the world collapsed in on itself. 
+Narrator: With Comcast’s poor handling of the world’s heavy data, the world collapsed in on itself.
 [[Test|17]]
 
 
@@ -84,7 +84,7 @@ Flossopher:Is it legal to slow down anyone’s speed at which they can see preci
 
 
 :: 6
-Judge: Mr. Fossospher, your point?
+Judge: Mr. Flossospher, your point?
 [[Test|7]]
 
 
@@ -155,11 +155,8 @@ Flossopher: So charging established Content Providers doesn’t stifle innovatio
 
 :: 44
 Comcast: No, those established Content Providers have the capital and resources to innovate and invest in the network they are using more of than most. 
-
-Remy: Can anyone invest enough to keep the Internet afloat?
-
+Flossopher: Can anyone invest enough to keep the Internet afloat?
 Comcast: ….No….
-
 Narrator: With the collapse of the Internet, and thus society, the world implodes.
 GAME OVER.
 [[Test|39]]
@@ -193,11 +190,8 @@ Flossopher: Free markets are for people not corporations.
 Comcast: Corporations are people!
 
 Flossopher: Exactly!
-
 Judge: As Corporations are considered people by this courtroom, I see no issue to resolve in this case. Case Closed.
-
 The World Implodes.
-
 GAME OVER.
 [[Test|39]]
 
@@ -229,9 +223,7 @@ Flossopher: With no regulation, finally humanity can ascend to being controlled 
 
 :: 46
 Comcast: Finally Comcast can rule the world! All hail the great Comcast! 
-
 Narrator: With the world under Comcast’s mismanaged grasp, the world suffers an implosion.
-
 GAME OVER.
 [[Test|39]]
 
@@ -275,16 +267,14 @@ Flossopher: So let’s reclassify Internet Service Providers!
 
 
 :: 47
-Comcast: These charges creates an equal Internet for our users. As Content Providers gain market traction, they will easily exist in the Internet ecosystem. 
-
-Remy: More pay for more play? Create an inequality to create an equalize internet?
-
+Comcast: These charges creates an equal Internet for our users. As Content Providers gain market traction, they will easily exist in the Internet ecosystem.
+Flossopher: More pay for more play? Create an inequality to create an equalize internet?
 Comcast: As Internet Service Providers are an Information Service, this is a fair and legal course of action for them to take.
 [[Test|48]]
 
 
 :: 51
-Judge: Really it means that Internet Service Providers can decide how data is sent through their network. 
+Judge: Really it means that Internet Service Providers can decide how data is sent through their network.
 [[Test|52]]
 
 
@@ -294,7 +284,7 @@ Judge: Only if the people of our great nation deem it necessary.
 
 
 :: 48
-Flossopher: How was this classification decided? 
+Flossopher: How was this classification decided?
 [[Test|49]]
 
 
@@ -304,13 +294,12 @@ Flossopher: So only Internet Service Providers can decide what Content Providers
 
 
 :: 56
-Narrator: But people did not see Net Neutrality as important, and the globe spiraled into a Comcast controlled corporate-nation. 
-
+Narrator: But people did not see Net Neutrality as important, and the globe spiraled into a Comcast controlled corporate-nation.
 THE END?
 
 
 :: 49
-Judge: In 2002, the FCC ruled that Internet Service Providers would be classified as an Information Service. In 2010, that decision was overruled, and Internet Service Providers were held to the same standards as Common carriers.  In 2014, a court judged that it was not legal to do so, and had the law revert back to its original state, with Internet Service Providers classified as an Information Service. 
+Judge: In 2002, the FCC ruled that Internet Service Providers would be classified as an Information Service. In 2010, that decision was overruled, and Internet Service Providers were held to the same standards as Common carriers.  In 2014, a court judged that it was not legal to do so, and had the law revert back to its original state, with Internet Service Providers classified as an Information Service.
 [[Test|50]]
 
 

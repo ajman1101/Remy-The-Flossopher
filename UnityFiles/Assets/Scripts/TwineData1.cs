@@ -21,7 +21,7 @@ public class TwineData1
 			}
 		}
 	}
-	public TwineData1(List <string> data, char split)
+	public TwineData1(List <string> data, string[] split)
 	{
 		for(int i = 0; i < data.Count; i++)
 		{
@@ -52,7 +52,8 @@ public class TwineData1
 	{
 		for(int i = 0; i < Data.Count; i++)
 		{
-            if (Data[i].Passage != "StoryAuthor" )
+			Debug.Log(Data[i].Passage);
+            try
             {
                 if (Int32.Parse(link) == Int32.Parse(Data[i].Passage))
                 {
@@ -60,6 +61,10 @@ public class TwineData1
                     break;
                 }
             }
+			catch
+			{
+
+			}
 		}
 	}
 
