@@ -123,9 +123,7 @@ public class AutoType : MonoBehaviour {
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
 				explosion.enabled = true;
-			}
-			speakersList.Clear();
-			contentList.Clear();	
+			}	
 		}
 		
 	}
@@ -163,6 +161,7 @@ public class AutoType : MonoBehaviour {
 			{
 				speakersList.Add(speakers);
 			}
+			Debug.Log("Speakers: " + speakersList.Count);
 			foreach(string content in Twine.TwineData.Current.Content)
 			{
 				contentList.Add(content);
@@ -191,6 +190,7 @@ public class AutoType : MonoBehaviour {
 					yield return 0;
 					yield return new WaitForSeconds (letterPause);
 				}
+				Debug.Log("i: " + i + " Speakers: " + speakersList.Count);
 				message+="\n";
 			}
 			if(speakersList.Count != contentList.Count)
@@ -228,6 +228,8 @@ public class AutoType : MonoBehaviour {
 				yield return new WaitForSeconds (letterPause);
 			}
 		}
+		speakersList.Clear();
+		contentList.Clear();
 		canClick = true;
 		mouse.enabled = true;
 	}
