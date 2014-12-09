@@ -132,8 +132,6 @@ public class AutoType : MonoBehaviour {
 	}
 
 	void TypeText () {
-		canClick = false;
-		message = "";
 		speaker = Twine.TwineData.Current.SpeakerData;
 		TwineNode1 tempNode;
 		if(Twine.TwineData.Current.LinkTitle[0] == "Test")
@@ -157,15 +155,12 @@ public class AutoType : MonoBehaviour {
 			}
 			Twine.TwineData.Current = tempNode;
 		}
-			
-		
-		canClick = true;
-		mouse.enabled = true;
 	}
 
 	IEnumerator createMessage()
 	{
 		canClick = false;
+		message = "";
 		if (speaker == "Flossopher")
 		{
 			remy.enabled = true;
