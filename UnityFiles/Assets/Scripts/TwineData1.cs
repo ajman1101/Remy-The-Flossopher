@@ -52,17 +52,22 @@ public class TwineData1
 	{
 		for(int i = 0; i < Data.Count; i++)
 		{
-            try
+            /*try
             {
                 if (Int32.Parse(link) == Int32.Parse(Data[i].Passage))
                 {
-                    current = Data[i];
+					current = Data[i];
                     break;
                 }
             }
 			catch
 			{
 
+			}*/
+			if(link.Trim() == Data[i].Passage.Trim())
+			{
+				current = Data[i];
+				break;
 			}
 		}
 	}

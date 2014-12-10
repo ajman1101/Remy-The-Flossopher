@@ -149,18 +149,31 @@ public class TwineNode1
 				links.Add(data.Substring(startLink, endLink - startLink));
 			}
 		}
+		if (data.IndexOf ("[[") == -1)
+		{
+			linkTitles.Add (" ");
+			links.Add(" ");
+		}
 		if (data.Length == 0)
 		{
 
 		}
-		if (data.IndexOf ("::") != -1 && data.IndexOf("[[") != -1)
+		if (data.IndexOf ("::") != -1 /*&& data.IndexOf("[[") != -1*/)
 		{
 			int startPassage = data.IndexOf ("::") + 3;
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
+			string tempContent;
 
 			int endContent = data.IndexOf ("[[");
-			string tempContent = data.Substring(endPassage, endContent - endPassage);
+			if(endContent != -1)
+			{
+				tempContent = data.Substring(endPassage, endContent - endPassage);
+			}
+			else
+			{
+				tempContent = data.Substring(endPassage);
+			}
 			string[] temp = tempContent.Split (split, StringSplitOptions.RemoveEmptyEntries);
 			if (temp.Length >= 2 && (temp.Length%2) == 0)
 			{
