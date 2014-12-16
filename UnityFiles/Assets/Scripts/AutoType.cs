@@ -67,6 +67,13 @@ public class AutoType : MonoBehaviour {
 			//StopCoroutine(createMessage());
 			TypeText();
 		}
+		else if(Input.GetMouseButtonDown(1) && canClick == true)
+		{
+			remy.enabled = false;
+			comcast.enabled = false;
+			judge.enabled = false;
+			explosion.enabled = false;
+		}
 		if (Input.GetKeyDown(KeyCode.Escape)) {
         Application.Quit();
     }
@@ -127,6 +134,108 @@ public class AutoType : MonoBehaviour {
 		}
 		
 	}
+	
+/*	void ShowText()
+	{
+	
+		canClick = false;
+		message = "";
+		TwineNode1 tempNode;
+		if(Twine.TwineData.Current.LinkTitle.Count == 1)
+		{
+			choice = false;
+			if (Twine.TwineData.Current.Speaker.Count > 1) 
+			{
+				foreach(string speakers in Twine.TwineData.Current.Speaker)
+				{
+					speakersList.Add(speakers);
+				}
+				Debug.Log("Speakers: " + speakersList.Count);
+				foreach(string content in Twine.TwineData.Current.Content)
+				{
+					contentList.Add(content);
+				}
+				for(int i = 0; i < speakersList.Count; i++)
+				{
+					speaker = speakersList[i];
+					if (speaker == "Flossopher")
+					{
+						remy.enabled = true;
+						remyAudio.Play();
+					}
+					if (speaker == "Comcast") 
+					{
+						comcast.enabled = true;
+						comcastAudio.Play();
+					}
+					if (speaker == "Judge")
+					{
+						judge.enabled = true;
+						judgeAudio.Play();
+					}
+					/*foreach (char letter in contentList[i]) 
+					{
+						message += letter;
+						yield return 0;
+						yield return new WaitForSeconds (letterPause);
+					}
+					message += contentList[i];
+					Debug.Log("i: " + i + " Speakers: " + speakersList.Count);
+					message+="\n";
+				}
+				if(speakersList.Count != contentList.Count)
+				{
+					foreach(char letter in contentList[speakersList.Count])
+					{
+						message += letter;
+						yield return 0;
+						yield return new WaitForSeconds (letterPause);
+					}
+				}
+			}
+            Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
+		}
+		else
+		{	
+			choice = true;
+			tempNode = Twine.TwineData.Current;
+			foreach (string currentChoice in Twine.TwineData.Current.Link)
+			{
+				Twine.TwineData.NextNode(currentChoice);
+				choicesLinksList.Add(currentChoice);
+			}
+		
+		}
+		else
+		{
+			speaker = Twine.TwineData.Current.SpeakerData;
+			if (speaker == "Flossopher")
+			{
+				remy.enabled = true;
+				remyAudio.Play();
+			}
+			if (speaker == "Comcast") 
+			{
+				comcast.enabled = true;
+				comcastAudio.Play();
+			}
+			if (speaker == "Judge")
+			{
+				judge.enabled = true;
+				judgeAudio.Play();
+			}
+			foreach (char letter in Twine.TwineData.Current.ContentData.ToString()) 
+			{
+				message += letter;
+				yield return 0;
+				yield return new WaitForSeconds (letterPause);
+			}
+		}
+				choicesList.Add (Twine.TwineData.Current.ContentData);
+			}
+			Twine.TwineData.Current = tempNode;
+		}
+	}*/
 
 	void TypeText () {
 		TwineNode1 tempNode;
