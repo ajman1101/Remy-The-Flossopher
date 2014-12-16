@@ -28,6 +28,9 @@ public class AutoType : MonoBehaviour {
 	public List<string> choicesLinksList;
 	public List<string> speakersList;
 	public List<string> contentList;
+	public AudioSource[] remySources;
+	public AudioSource[] judgeSources;
+	public AudioSource[] comcastSources;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +43,10 @@ public class AutoType : MonoBehaviour {
 		comcast.enabled = false;
 		judge.enabled = false;
 		explosion.enabled = false;
+		remySources = remyAudio.GetComponents<AudioSource>();
+		judgeSources = judgeAudio.GetComponents<AudioSource>();
+		comcastSources = comcastAudio.GetComponents<AudioSource>();
+
 
 //		remyClips[0] = AudioClip.Create("R_eh-eh.mp3", 44100, 1, 44100, false, true);
 //		remyClips[1] = AudioClip.Create("R_Hmmmm.mp3", 44100, 1, 44100, false, true);
@@ -281,19 +288,22 @@ public class AutoType : MonoBehaviour {
 				if (speaker == "Flossopher")
 				{
 					remy.enabled = true;
-					remyAudio.Play();
+					remySources[Random.Range(0, remySources.Length)].Play();
+					//remyAudio.Play();
 				}
 				if (speaker == "Comcast") 
 				{
 					comcast.enabled = true;
-					comcastAudio.Play();
+					comcastSources[Random.Range(0,comcastSources.Length)].Play();
+					//comcastAudio.Play();
 				}
 				if (speaker == "Judge")
 				{
 					judge.enabled = true;
-					judgeAudio.Play();
+					judgeSources[Random.Range(0,judgeSources.Length)].Play();
+					//judgeAudio.Play();
 				}
-				foreach (char letter in contentList[i]) 
+				foreach (char letter in (speakersList[i] + ": " + contentList[i])) 
 				{
 					message += letter;
 					yield return 0;
@@ -318,17 +328,20 @@ public class AutoType : MonoBehaviour {
 			if (speaker == "Flossopher")
 			{
 				remy.enabled = true;
-				remyAudio.Play();
+				remySources[Random.Range(0, remySources.Length)].Play();
+				//remyAudio.Play();
 			}
 			if (speaker == "Comcast") 
 			{
 				comcast.enabled = true;
-				comcastAudio.Play();
+				comcastSources[Random.Range(0,comcastSources.Length)].Play();
+				//comcastAudio.Play();
 			}
 			if (speaker == "Judge")
 			{
 				judge.enabled = true;
-				judgeAudio.Play();
+				judgeSources[Random.Range(0,judgeSources.Length)].Play();
+				//udgeAudio.Play();
 			}
 			foreach (char letter in Twine.TwineData.Current.ContentData.ToString()) 
 			{
