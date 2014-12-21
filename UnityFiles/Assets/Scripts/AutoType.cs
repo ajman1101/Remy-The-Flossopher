@@ -22,6 +22,8 @@ public class AutoType : MonoBehaviour {
 	string speaker = "";
 	public bool canClick = false;
 	public bool choice = false;
+	public bool hasClicked = false;
+	public bool isMultiSpeaker = false;
 	Vector3 mousePos;
 	public TwineImporter1 Twine;
 	public List<string> choicesList;
@@ -66,13 +68,17 @@ public class AutoType : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
-		if(Input.GetMouseButtonDown(0) /*|| Input.GetKeyDown(KeyCode.Space)*/ && canClick == true){
+		if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) && canClick == true)
+		{
 			remy.enabled = false;
 			comcast.enabled = false;
 			judge.enabled = false;
 			explosion.enabled = false;
-			//StopCoroutine(createMessage());
 			TypeText();
+		}
+		else if(Input.GetMouseButtonDown(0) && isMultiSpeaker == true)
+		{
+			hasClicked = true;
 		}
 		else if(Input.GetMouseButtonDown(1) && canClick == true)
 		{
@@ -102,8 +108,6 @@ public class AutoType : MonoBehaviour {
 			{
 				Twine.TwineData.NextNode(choicesLinksList[0]);
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
-				choicesList.Clear();
-				choicesLinksList.Clear();
 				StartCoroutine(createMessage());
 				Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
 				choice = false;
@@ -273,11 +277,11 @@ public class AutoType : MonoBehaviour {
 		message = "";
 		if (Twine.TwineData.Current.Speaker.Count > 1) 
 		{
+			isMultiSpeaker = true;
 			foreach(string speakers in Twine.TwineData.Current.Speaker)
 			{
 				speakersList.Add(speakers);
 			}
-			Debug.Log("Speakers: " + speakersList.Count);
 			foreach(string content in Twine.TwineData.Current.Content)
 			{
 				contentList.Add(content);
@@ -303,15 +307,16 @@ public class AutoType : MonoBehaviour {
 					judgeSources[Random.Range(0,judgeSources.Length)].Play();
 					//judgeAudio.Play();
 				}
-				foreach (char letter in (speakersList[i] + ": " + contentList[i])) 
+				message = "";
+				foreach (char letter in (contentList[i])) 
 				{
 					message += letter;
 					yield return 0;
 					yield return new WaitForSeconds (letterPause);
 				}
-				Debug.Log("i: " + i + " Speakers: " + speakersList.Count);
-				message+="\n";
+				yield return StartCoroutine(waitForClick());
 			}
+			isMultiSpeaker = false;
 			if(speakersList.Count != contentList.Count)
 			{
 				foreach(char letter in contentList[speakersList.Count])
@@ -321,6 +326,7 @@ public class AutoType : MonoBehaviour {
 					yield return new WaitForSeconds (letterPause);
 				}
 			}
+			TypeText();
 		}
 		else
 		{
@@ -352,7 +358,22 @@ public class AutoType : MonoBehaviour {
 		}
 		speakersList.Clear();
 		contentList.Clear();
+		choicesList.Clear ();
+		choicesLinksList.Clear ();
 		canClick = true;
 		mouse.enabled = true;
+	}
+
+	IEnumerator waitForClick()
+	{
+		while(hasClicked == false)
+		{
+			yield return null;
+		}
+		hasClicked = false;
+		//message = "";
+		remy.enabled = false;
+		comcast.enabled = false;
+		judge.enabled = false;
 	}
 }
